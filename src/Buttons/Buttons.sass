@@ -1,0 +1,28 @@
+$lightmode-background: #FFFFFF
+$lightmode-background-hover: #EFEFED
+$lightmode-text-color: #5F5E5B
+
+$darkmode-background: #202020
+$darkmode-background-hover: #2C2C2C
+$darkmode-text-color: #9B9B9B
+
+button
+    border: none
+
+.button-main
+    padding: 0.5rem 1rem
+    border-radius: 0.5rem
+    white-space: nowrap
+    font-size: 1em
+    cursor: pointer
+
+.dark 
+    background-color: $darkmode-background
+    color: $darkmode-text-color
+    &:hover
+        background-color: $darkmode-background-hover
+.light 
+    background-color: $lightmode-background
+    color: $lightmode-text-color
+    &:hover
+        background-color: $lightmode-background-hover

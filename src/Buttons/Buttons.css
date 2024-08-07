@@ -1,0 +1,29 @@
+button {
+  border: none;
+}
+
+.button-main {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  white-space: nowrap;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.dark {
+  background-color: #202020;
+  color: #9B9B9B;
+}
+.dark:hover {
+  background-color: #2C2C2C;
+}
+
+.light {
+  background-color: #FFFFFF;
+  color: #5F5E5B;
+}
+.light:hover {
+  background-color: #EFEFED;
+}
+
+/*# sourceMappingURL=Buttons.css.map */
