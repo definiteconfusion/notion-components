@@ -1,4 +1,5 @@
 # Notion Components 📇
+![image](./React%20Notion%20Logo.png)
 
 ## Current Components:
 - Button  
