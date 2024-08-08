@@ -20,4 +20,4 @@
    ```
 
 ## Current Contributors
- - Jake Rase
+ - [Jake Rase](https://micro.jakerase.dev)
