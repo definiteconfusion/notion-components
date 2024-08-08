@@ -9,10 +9,10 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Button
-    mode="light"
+    mode="affirmative"
     onClick={() => {console.log('Hello World')}}
     >
-      Hello World
+      Continue
     </Button>
   </React.StrictMode>
 );

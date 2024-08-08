@@ -26,4 +26,12 @@ button {
   background-color: #EFEFED;
 }
 
+.affirmative {
+  background-color: #2383E1;
+  color: #FFFFFF;
+}
+.affirmative:hover {
+  background-color: #4b94dd;
+}
+
 /*# sourceMappingURL=Buttons.css.map */
