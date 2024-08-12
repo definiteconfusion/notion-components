@@ -56,5 +56,24 @@
       </Header1>
     </Vstack>
    ```
+- Link
+  - Styles:
+    - Light
+    - Dark
+    - Affirmative
+  - Functions:
+    - mode: controls styles
+    - color: provides manual color over-ride
+    - destination: sets the link's web destination
+  - Syntax:
+   ```html
+   <Link 
+    destination="https://amazon.com"
+    mode="affirmative"
+    >
+      Hello World
+    </Link>
+   ```
+
 ## Current Contributors
  - [Jake Rase](https://micro.jakerase.dev)

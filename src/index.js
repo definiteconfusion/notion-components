@@ -1,9 +1,12 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import Button from './Buttons/Buttons';
 import './Styles/Styles'
+import Link from './Link/Link'
 import { Vstack, Hstack } from './Containers/Containers'
 import { Header1, Header2, Header3, Header4, Header5, Header6 } from './Headers/Headers';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -20,11 +23,12 @@ root.render(
     >
       Item One
     </Header1>
-    <Header1
-        mode="affirmative"
+    <Link 
+    destination="https://amazon.com"
+    mode="affirmative"
     >
-      Item Two
-    </Header1>
+      Hello World
+    </Link>
     </Vstack>
   </React.StrictMode>
 );
