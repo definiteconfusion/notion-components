@@ -68,7 +68,7 @@
   - Syntax:
    ```html
    <Link 
-    destination="https://amazon.com"
+    destination="https://jakerase.dev"
     mode="affirmative"
     >
       Hello World
