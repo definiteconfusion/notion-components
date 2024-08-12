@@ -6,9 +6,9 @@ jsx_files=()
 while IFS= read -r file; do
     jsx_files+=("$file")
 done < <(find "${current_path}/src" -type f \( -name "*.jsx" -o -name "*.css" \))
-mkdir -p "${current_path}Build/"
+mkdir -p "${current_path}/Build/"
 # Writing the content of `.jsx` and `.css` files to `Build` directory
 for file_path in "${jsx_files[@]}"; do
     file_name=$(basename "$file_path")
-    cat "$file_path" > "${current_path}Build/$file_name"
+    cat "$file_path" > "${current_path}/Build/$file_name"
 done
