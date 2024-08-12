@@ -24,7 +24,7 @@ Nine Specific weights are supported:
 - `600`
 - `700`
 - `800`
-- `900`
+- `900`  
 Aswell as five general weights
 - `thin`
 - `light`
