@@ -1,0 +1,46 @@
+.back-dark {
+  color: #FFFFFF;
+}
+.back-dark:hover {
+  color: #FFFFFF;
+}
+
+.back-light {
+  color: #202020;
+}
+.back-light:hover {
+  color: #202020;
+}
+
+.back-affirmative {
+  color: #2383E1;
+}
+.back-affirmative:hover {
+  color: #2383E1;
+}
+
+.dark {
+  background-color: #202020;
+  color: #9B9B9B;
+}
+.dark:hover {
+  background-color: #2C2C2C;
+}
+
+.light {
+  background-color: #FFFFFF;
+  color: #5F5E5B;
+}
+.light:hover {
+  background-color: #EFEFED;
+}
+
+.affirmative {
+  background-color: #2383E1;
+  color: #FFFFFF;
+}
+.affirmative:hover {
+  background-color: #4b94dd;
+}
+
+/*# sourceMappingURL=Styles.css.map */

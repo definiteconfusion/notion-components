@@ -1,0 +1,49 @@
+// Global Color Variables for Light Mode `mode = "light"`
+$lightmode-background: #FFFFFF
+$lightmode-background-hover: #EFEFED
+$lightmode-text-color: #5F5E5B
+
+// Global Color Variables for Dark Mode `mode = "dark"`
+$darkmode-background: #202020
+$darkmode-background-hover: #2C2C2C
+$darkmode-text-color: #9B9B9B
+
+// Global Color Variables for Affirmative Mode `mode = "affirmative"`
+$affirmative-background: #2383E1
+$affirmative-background-hover: #4b94dd
+$affirmative-text-color: #FFFFFF
+    
+// Dark Mode Color Control for Objects without a `background-color` Attribute
+.back-dark 
+    color: $lightmode-background
+    &:hover
+        color: $lightmode-background
+// Light Mode Color Control for Objects without a `background-color` Attribute
+.back-light 
+    color: $darkmode-background
+    &:hover
+        color: $darkmode-background
+// Affirmative Mode Color Control for Objects without a `background-color` Attribute
+.back-affirmative
+    color: $affirmative-background
+    &:hover
+        color: $affirmative-background
+
+// Dark Mode Color Control for Objects with a `background-color` Attribute
+.dark 
+    background-color: $darkmode-background
+    color: $darkmode-text-color
+    &:hover
+        background-color: $darkmode-background-hover
+// Light Mode Color Control for Objects with a `background-color` Attribute
+.light 
+    background-color: $lightmode-background
+    color: $lightmode-text-color
+    &:hover
+        background-color: $lightmode-background-hover
+// Affirmative Mode Color Control for Objects with a `background-color` Attribute
+.affirmative
+    background-color: $affirmative-background
+    color: $affirmative-text-color
+    &:hover
+        background-color: $affirmative-background-hover

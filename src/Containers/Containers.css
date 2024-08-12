@@ -1,0 +1,14 @@
+.vstack-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.hstack-main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+/*# sourceMappingURL=Containers.css.map */

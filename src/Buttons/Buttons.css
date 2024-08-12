@@ -10,28 +10,4 @@ button {
   cursor: pointer;
 }
 
-.dark {
-  background-color: #202020;
-  color: #9B9B9B;
-}
-.dark:hover {
-  background-color: #2C2C2C;
-}
-
-.light {
-  background-color: #FFFFFF;
-  color: #5F5E5B;
-}
-.light:hover {
-  background-color: #EFEFED;
-}
-
-.affirmative {
-  background-color: #2383E1;
-  color: #FFFFFF;
-}
-.affirmative:hover {
-  background-color: #4b94dd;
-}
-
 /*# sourceMappingURL=Buttons.css.map */
