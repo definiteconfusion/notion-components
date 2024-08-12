@@ -1,4 +1,5 @@
 # Notion Components 📇
+![!image](./Github%20Social%20Banner.png)
 
 ## **NOTICE** 😊
 This projects is built to allow admirerers of Notion's style to spread it further, and by no means built to steal/ take-away-from the work of the Notion team or to take credit for thier work

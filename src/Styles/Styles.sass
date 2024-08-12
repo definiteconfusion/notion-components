@@ -12,6 +12,11 @@ $darkmode-text-color: #9B9B9B
 $affirmative-background: #2383E1
 $affirmative-background-hover: #4b94dd
 $affirmative-text-color: #FFFFFF
+
+// Global Color Variables for Affirmative Mode `mode = "affirmative"`
+$destructive-background: red
+$destructive-background-hover: #ff3f3f
+$destructive-text-color: #FFFFFF
     
 // Dark Mode Color Control for Objects without a `background-color` Attribute
 .back-dark 
@@ -28,6 +33,11 @@ $affirmative-text-color: #FFFFFF
     color: $affirmative-background
     &:hover
         color: $affirmative-background
+// Affirmative Mode Color Control for Objects without a `background-color` Attribute
+.back-destructive
+    color: $destructive-background
+    &:hover
+        color: $destructive-background
 
 // Dark Mode Color Control for Objects with a `background-color` Attribute
 .dark 
@@ -47,6 +57,12 @@ $affirmative-text-color: #FFFFFF
     color: $affirmative-text-color
     &:hover
         background-color: $affirmative-background-hover
+// Affirmative Mode Color Control for Objects with a `background-color` Attribute
+.destructive
+    background-color: $destructive-background
+    color: $destructive-text-color
+    &:hover
+        background-color: $destructive-background-hover
 
 // Global Font Variables
 .sans 
@@ -125,3 +141,11 @@ $affirmative-text-color: #FFFFFF
 
 .td-normal
     font-style: normal !important
+
+// Text Alignments
+.ta-left
+    text-align: left !important
+.ta-right
+    text-align: right !important
+.ta-center
+    text-align: center !important

@@ -19,6 +19,13 @@
   color: #2383E1;
 }
 
+.back-destructive {
+  color: red;
+}
+.back-destructive:hover {
+  color: red;
+}
+
 .dark {
   background-color: #202020;
   color: #9B9B9B;
@@ -41,6 +48,14 @@
 }
 .affirmative:hover {
   background-color: #4b94dd;
+}
+
+.destructive {
+  background-color: red;
+  color: #FFFFFF;
+}
+.destructive:hover {
+  background-color: #ff3f3f;
 }
 
 .sans {
@@ -133,6 +148,18 @@
 
 .td-normal {
   font-style: normal !important;
+}
+
+.ta-left {
+  text-align: left !important;
+}
+
+.ta-right {
+  text-align: right !important;
+}
+
+.ta-center {
+  text-align: center !important;
 }
 
 /*# sourceMappingURL=Styles.css.map */

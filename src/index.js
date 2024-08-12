@@ -15,20 +15,25 @@ let testMode = 'affirmative';
 root.render(
   <React.StrictMode>
     <Vstack
-        control="center"
+        control="left"
         padding="1rem"
     >
       <Header1
-        mode="light"
+        mode="light mono black"
     >
       Item One
     </Header1>
     <Link 
     destination="https://amazon.com"
-    mode="affirmative"
+    mode="light mono thin"
     >
       Hello World
     </Link>
+    <Button
+      mode="destructive mono normal"
+    >
+      Hello World
+    </Button>
     </Vstack>
   </React.StrictMode>
 );
