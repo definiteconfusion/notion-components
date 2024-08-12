@@ -19,7 +19,7 @@ root.render(
         padding="1rem"
     >
       <Header1
-        mode="light mono black"
+        mode="light serif black"
     >
       Item One
     </Header1>
@@ -31,6 +31,7 @@ root.render(
     </Link>
     <Button
       mode="destructive mono normal"
+      onClick={() => console.log('Hello World')}
     >
       Hello World
     </Button>

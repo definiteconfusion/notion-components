@@ -16,7 +16,7 @@
 
    ```html
    <Link 
-    destination="https://jakrase.dev"
+    destination="https://jakerase.dev"
     mode="affirmative"
     >
       Hello World
