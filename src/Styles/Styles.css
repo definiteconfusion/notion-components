@@ -43,4 +43,96 @@
   background-color: #4b94dd;
 }
 
+.sans {
+  font-family: sans-serif !important;
+}
+
+.mono {
+  font-family: monospace !important;
+}
+
+.serif {
+  font-family: serif !important;
+}
+
+.thin {
+  font-weight: 100 !important;
+}
+
+.light {
+  font-weight: 200 !important;
+}
+
+.normal {
+  font-weight: 400 !important;
+}
+
+.bold {
+  font-weight: 600 !important;
+}
+
+.black {
+  font-weight: 800 !important;
+}
+
+.w100 {
+  font-weight: 100 !important;
+}
+
+.w200 {
+  font-weight: 200 !important;
+}
+
+.w300 {
+  font-weight: 300 !important;
+}
+
+.w400 {
+  font-weight: 400 !important;
+}
+
+.w500 {
+  font-weight: 500 !important;
+}
+
+.w600 {
+  font-weight: 600 !important;
+}
+
+.w700 {
+  font-weight: 700 !important;
+}
+
+.w800 {
+  font-weight: 800 !important;
+}
+
+.w900 {
+  font-weight: 900 !important;
+}
+
+.td-none {
+  text-decoration: none !important;
+}
+
+.td-underline {
+  text-decoration: underline !important;
+}
+
+.td-overline {
+  text-decoration: overline !important;
+}
+
+.td-through {
+  text-decoration: line-through !important;
+}
+
+.td-italic {
+  font-style: italic !important;
+}
+
+.td-normal {
+  font-style: normal !important;
+}
+
 /*# sourceMappingURL=Styles.css.map */
