@@ -6,6 +6,9 @@ This projects is built to allow admirerers of Notion's style to spread it furthe
 ## **LICENCING**
 This project falls under the Creative Commons 4.0 Attribute Licence as outlined on their [website](https://creativecommons.org/licenses/by/4.0/) aswell as in the [LICENSE](./LICENSE) file included with this repo.
 
+## Class System
+This project uses a class-based object modification system... so basically discount tailwind. You can view each of the modification classes in the [Styles.sass](./src/Styles/Styles.sass) file, the first real modification class is on line **52**. For a full breakdown go to the [styles-readme](./src/Styles/styles-readme.md) in the same directory!
+
 ## Button
   - Styles:
     - Light
