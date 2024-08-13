@@ -16,7 +16,7 @@ const Hstack = ({ children, control, padding }) => {
     return (
     <div className="hstack-main" style={{alignItems: control}}>
         {children.map((child, index) => (
-                <div key={index} style={{ marginInline: padding }}>
+                <div key={index} style={{ marginInline: padding,  marginBlock: padding}}>
                     {child}
                 </div>
             ))}
