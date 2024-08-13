@@ -9,6 +9,7 @@
 ## Functions
 
 - mode: controls styles
+- className: allows for additional tooling with custom classes
 
 ## Syntax
 

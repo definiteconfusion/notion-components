@@ -3,6 +3,7 @@
 ![!image](./Github%20Social%20Banner.png)
 
 ## **NOTICE** 😊
+
 This project is built to allow admirers of Notion's style to spread it further, and by no means is built to steal/take away from the work of the Notion team or to take credit for their work
 
 ## **LICENSING**
@@ -23,6 +24,7 @@ To make changes, make a new directory, then inside, just make sure you have your
 - [Containers](./src/Containers/containers-reame.md)
 - [Headers](./src/Headers/headers-readme.md)
 - [Links](./src/Link/links-readme.md)
+- [Images](./src/Image/image-readme.md)
 
 ## Current Contributors
 

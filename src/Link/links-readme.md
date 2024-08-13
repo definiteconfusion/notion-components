@@ -11,6 +11,7 @@
 - mode: controls styles
 - color: provides manual color over-ride
 - destination: sets the link's web destination
+- className: allows for additional tooling with custom classes
 
 ## Syntax
 

@@ -1,8 +1,8 @@
 import './Link.css'
 
-const Link = ({ children, destination, color, mode }) => {
+const Link = ({ children, destination, color, mode, className }) => {
     return (
-    <a href={destination} className={`link-main  back-${mode}`} style={{color: color}}>
+    <a href={destination} className={`link-main  back-${mode} ${className}`} style={{color: color}}>
         {children}
     </a>
   );

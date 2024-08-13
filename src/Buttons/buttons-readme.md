@@ -10,6 +10,7 @@
 
 - mode: controls styles
 - onClick: controls onClick functionality
+- className: allows for additional tooling with custom classes
 
 ## Syntax
 
