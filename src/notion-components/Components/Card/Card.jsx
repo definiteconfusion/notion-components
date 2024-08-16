@@ -6,9 +6,15 @@ import Button from '../Buttons/Buttons';
 import { Header1, Header2, Header3, Header4, Header5, Header6 } from '../Headers/Headers';
 import Image from '../Image/Image';
 
-const Card = ({ icon, title, price, unit, currency, buttonTitle, buttonOnClick }) => {
+const Card = ({ children, icon, title, price, unit, currency, buttonTitle, buttonOnClick, mode }) => {
+
+    let buttonColorKeys = {
+        "light":"midnight",
+        "dark":"light"
+    }
+
     return (
-        <div className="card-main">
+        <div className={`card-main-${mode}`}>
             <div className="card-content-container">
                 <Vstack
                     control="start"
@@ -16,19 +22,25 @@ const Card = ({ icon, title, price, unit, currency, buttonTitle, buttonOnClick }
                 >
                     <Image 
                     src={icon}
-                    width="9rem"
-                    height="auto"
+                    height="9rem"
+                    width="auto"
                     borderRad="5%"
                     />
-                    <Header3 mode="light card-title">{title}</Header3>
+                    <Hstack
+                        control="center"
+                        padding="0.5rem"
+                    >
+                        <Header3 mode={`${mode} card-title-${mode}`}>{title}</Header3>
+                        {children}
+                    </Hstack>
                     <Hstack
                         control="end"
                     >
-                        <p className="card-price">{currency}{price}</p>
-                        <p className="card-unit">{unit}</p>
+                        <p className={`card-price-${mode}`}>{currency}{price}</p>
+                        <p className={`card-unit-${mode}`}>{unit}</p>
                     </Hstack>
                     <Button
-                        mode="light"
+                        mode={buttonColorKeys[mode]}
                         onClick={buttonOnClick}
                     >
                     {buttonTitle}
@@ -39,4 +51,4 @@ const Card = ({ icon, title, price, unit, currency, buttonTitle, buttonOnClick }
     )
 }
 
-export default Card
+export { Card }

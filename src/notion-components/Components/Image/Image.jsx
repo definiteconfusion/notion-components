@@ -9,7 +9,8 @@ const Image = ({ src, width, height, alt, borderRad, className }) => {
     style={{
         width: width,
         height: height,
-        borderRadius: borderRad
+        borderRadius: borderRad,
+        objectFit: 'cover'
     }}
      />
     )

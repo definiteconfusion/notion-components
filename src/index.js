@@ -1,33 +1,55 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Button from './Buttons/Buttons';
-import './Styles/Styles'
-import Link from './Link/Link'
-import Image from './Image/Image'
-import { Vstack, Hstack } from './Containers/Containers'
-import { Header1, Header2, Header3, Header4, Header5, Header6 } from './Headers/Headers';
-import { Itag } from './Tag/Tag';
-import Card from './Card/Card'
+import { Button, Link, Image, Vstack, Hstack, Header1, Header2, Header3, Header4, Header5, Header6, Itag, Card } from 'notion-components';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-let testMode = 'affirmative';
-
 root.render(
   <React.StrictMode>
-    <Hstack
-      control="center"
-      padding="1rem"
-    >
-      <Card
-        icon="https://via.placeholder.com/500"
-        title="Title"
-        price="£10"
-        unit="per kilo"
-        buttonTitle="Inspect: ⌘ + ⌥ + c"
-        buttonOnClick={() => console.log('Button Clicked')}
-      />
-    </Hstack>
+        <Vstack
+          control="start"
+          padding="1rem"
+        >
+          <Header1
+            mode="dark"
+          >
+            Products</Header1>
+          <Hstack
+            control="center"
+            padding="1rem"
+          >
+            <Card
+            mode="dark"
+              icon="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnCc23ls9cAiMp6x7q618RMGa-9GcV_Nkc6g&s"
+              title="Tropical Hi-Chew"
+              price="4.99"
+              currency="£"
+              unit="per pack"
+              buttonTitle="Add to Cart"
+              buttonOnClick={() => console.log('Button Clicked')}
+            >  
+              <Itag 
+                  mode="affirmative"
+                  title="New"
+              />
+            </Card>
+            <Card
+            mode="dark"
+              icon="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnCc23ls9cAiMp6x7q618RMGa-9GcV_Nkc6g&s"
+              title="Tropical Hi-Chew"
+              price="4.99"
+              currency="£"
+              unit="per pack"
+              buttonTitle="Add to Cart"
+              buttonOnClick={() => console.log('Button Clicked')}
+            >  
+              <Itag 
+                  mode="constructive"
+                  title="New"
+              />
+            </Card>
+          </Hstack>
+        </Vstack>
   </React.StrictMode>
 );

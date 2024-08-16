@@ -1,0 +1,73 @@
+.card-content-container {
+  margin-left: 2.25rem;
+}
+
+.card-main-dark {
+  width: 23rem;
+  height: 22rem;
+  background-color: #2C2C2C;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.card-title-dark {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #FFF;
+}
+
+.card-price-dark {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #FFF;
+  margin: 0px;
+  margin-block: 0px;
+  line-height: 1;
+}
+
+.card-unit-dark {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #FFF;
+  margin-block: 0px;
+  margin-left: 0.25rem;
+}
+
+.card-main-light {
+  width: 23rem;
+  height: 22rem;
+  background-color: #F6F5F4;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.card-title-light {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.card-price-light {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #000;
+  margin: 0px;
+  margin-block: 0px;
+  line-height: 1;
+}
+
+.card-unit-light {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #333;
+  margin-block: 0px;
+  margin-left: 0.25rem;
+}
+
+/*# sourceMappingURL=Card.css.map */

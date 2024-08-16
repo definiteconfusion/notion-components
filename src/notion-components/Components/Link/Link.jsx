@@ -8,4 +8,4 @@ const Link = ({ children, destination, color, mode, className }) => {
   );
 };
 
-export default Link;
+export { Link };

@@ -6,4 +6,4 @@ const Style = (
     </div>
 );
 
-export default Style
+export { Style }

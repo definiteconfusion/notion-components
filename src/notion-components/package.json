@@ -1,0 +1,25 @@
+{
+    "name": "notion-components", 
+    "description": "A library to replicate the components used by the Notion notes app", 
+    "keywords": ["notion"], 
+    "version": "1.0.4", 
+    "homepage": "https://micro.jakerase.dev", 
+    "bugs": "https://github.com/definiteconfusion/notion-components", 
+    "license": "MIT", 
+    "files": ["LICENSE", "README.md", "index.js", "Components/"], 
+    "main": "Notion.js", 
+    "exports": {
+        ".": "./index.js"
+            }, 
+    "repository": {
+        "type": "git",
+         "url": "https://github.com/definiteconfusion/notion-components.git", 
+         "directory": "./"
+         }, 
+         "engines": {
+            "node": ">=0.10.0"
+            }, 
+            "dependencies": {
+                "react": "^18.3.1"
+                }
+            }

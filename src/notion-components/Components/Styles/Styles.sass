@@ -1,69 +1,69 @@
-// Global Color Variables for Light Mode `mode = "light"`
-$lightmode-background: #FFFFFF
-$lightmode-background-hover: #EFEFED
-$lightmode-text-color: #5F5E5B
-
-// Global Color Variables for Dark Mode `mode = "dark"`
-$darkmode-background: #202020
-$darkmode-background-hover: #2C2C2C
-$darkmode-text-color: #9B9B9B
-
-// Global Color Variables for Affirmative Mode `mode = "affirmative"`
-$affirmative-background: #2383E1
-$affirmative-background-hover: #4b94dd
-$affirmative-text-color: #FFFFFF
-
-// Global Color Variables for Affirmative Mode `mode = "affirmative"`
-$destructive-background: red
-$destructive-background-hover: #ff3f3f
-$destructive-text-color: #FFFFFF
-    
 // Dark Mode Color Control for Objects without a `background-color` Attribute
 .back-dark 
-    color: $lightmode-background
+    color: #FFFFFF
     &:hover
-        color: $lightmode-background
+        color: #FFFFFF
+// Black Mode Color Control for Objects without a `background-color` Attribute
+.midnight-black 
+    color: #FFFFFF
+    &:hover
+        color: #FFFFFF
 // Light Mode Color Control for Objects without a `background-color` Attribute
 .back-light 
-    color: $darkmode-background
+    color: #202020
     &:hover
-        color: $darkmode-background
+        color: #202020
 // Affirmative Mode Color Control for Objects without a `background-color` Attribute
 .back-affirmative
-    color: $affirmative-background
+    color: #FFFFFF
     &:hover
-        color: $affirmative-background
-// Affirmative Mode Color Control for Objects without a `background-color` Attribute
+        color: #FFFFFF
+// Destructive Mode Color Control for Objects without a `background-color` Attribute
 .back-destructive
-    color: $destructive-background
+    color: #FFFFFF
     &:hover
-        color: $destructive-background
+        color: #FFFFFF
+// Destructive Mode Color Control for Objects without a `background-color` Attribute
+.back-constructive
+    color: #3d3d3d
+    &:hover
+        color: #3d3d3d
 
 // Dark Mode Color Control for Objects with a `background-color` Attribute
 .dark 
-    background-color: $darkmode-background
-    color: $darkmode-text-color
+    background-color: #202020
+    color: #9B9B9B
     &:hover
-        background-color: $darkmode-background-hover
+        background-color: #2C2C2C
+.midnight 
+    background-color: #000000
+    color: #FFFFFF
+    &:hover
+        background-color: #333333
 // Light Mode Color Control for Objects with a `background-color` Attribute
 .light 
-    background-color: $lightmode-background
-    color: $lightmode-text-color
+    background-color: #FFFFFF
+    color: #5F5E5B
     &:hover
-        background-color: $lightmode-background-hover
+        background-color: #EFEFED
 // Affirmative Mode Color Control for Objects with a `background-color` Attribute
 .affirmative
-    background-color: $affirmative-background
-    color: $affirmative-text-color
+    background-color: #2383E1
+    color: #FFFFFF
     &:hover
-        background-color: $affirmative-background-hover
-// Affirmative Mode Color Control for Objects with a `background-color` Attribute
+        background-color: #4b94dd
+// Destructive Mode Color Control for Objects with a `background-color` Attribute
 .destructive
-    background-color: $destructive-background
-    color: $destructive-text-color
+    background-color: red
+    color: #FFFFFF
     &:hover
-        background-color: $destructive-background-hover
-
+        background-color: #ff3f3f
+// Affirmative Mode Color Control for Objects with a `background-color` Attribute
+.constructive
+    background-color: #00ff00
+    color: #3d3d3d
+    &:hover
+        background-color: #99ff99
 // Global Font Variables
 .sans 
   font-family: sans-serif !important
