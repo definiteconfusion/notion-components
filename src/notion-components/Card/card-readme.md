@@ -1,6 +1,9 @@
 # Card
 
-## ``New Styles in The Works!!``
+## Styles
+
+- light
+- dark
 
 ## Functions
 
@@ -20,6 +23,7 @@
         title="Title"
         price="£10"
         unit="per kilo"
+        style="dark"
         buttonTitle="Inspect: ⌘ + ⌥ + c"
         buttonOnClick={() => console.log('Card Button Clicked')}
       />

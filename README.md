@@ -18,6 +18,8 @@ This project uses a class-based object modification system... so basically disco
 
 To make changes, make a new directory, then inside, just make sure you have your component file in the `.jsx` format, and your style sheet in the `.css` format, then in the terminal simply run `bun run compile` (or `npm run compile` if you don't use Bun) to write your changes to the `/Build` directory with the rest of the files, and voila!
 
+## [TODO[s]](./TODO.md)
+
 ## Table of Contents
 
 - [Buttons](./src/notion-components/Buttons/buttons-readme.md)
