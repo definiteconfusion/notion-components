@@ -1,6 +1,7 @@
 import './Tag.css'
+import React from 'react';
 
-const Itag = ({ title, mode }) => {
+const Tag = ({ title, mode }) => {
     return (
         <div className={`tag-main ${mode}`}>
             <p className="tag-title">
@@ -10,4 +11,4 @@ const Itag = ({ title, mode }) => {
     )
 }
 
-export { Itag }
+export { Tag };

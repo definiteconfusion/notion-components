@@ -1,4 +1,5 @@
 import './Headers.css';
+import React from 'react';
 
 const Header1 = ({ children, mode, className }) => {
     return (

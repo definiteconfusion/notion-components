@@ -1,4 +1,5 @@
 import './Containers.css'
+import React from 'react';
 
 // Stacking  children objects in the Block direction 
 const Vstack = ({ children, control, padding }) => {

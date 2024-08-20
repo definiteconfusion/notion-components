@@ -20,11 +20,13 @@ To make changes, make a new directory, then inside, just make sure you have your
 
 ## Table of Contents
 
-- [Buttons](./src/Buttons/buttons-readme.md)
-- [Containers](./src/Containers/containers-reame.md)
-- [Headers](./src/Headers/headers-readme.md)
-- [Links](./src/Link/links-readme.md)
-- [Images](./src/Image/image-readme.md)
+- [Buttons](./src/notion-components/Buttons/buttons-readme.md)
+- [Containers](./src/notion-components/Containers/containers-reame.md)
+- [Headers](./src/notion-components/Headers/headers-readme.md)
+- [Links](./src/notion-components/Link/links-readme.md)
+- [Images](./src/notion-components/Image/image-readme.md)
+- [Card](./src/notion-components/Card/card-readme.md)
+- [Tag](./src/notion-components/Tag/links-readme.md)
 
 ## Current Contributors
 

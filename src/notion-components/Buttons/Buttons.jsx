@@ -1,4 +1,6 @@
 import './Buttons.css';
+import React from 'react';
+
 
 const Button = ({ children, mode, onClick, className }) => {
     return (
@@ -8,4 +10,4 @@ const Button = ({ children, mode, onClick, className }) => {
     );
 }
 
-export default Button;
+export { Button };

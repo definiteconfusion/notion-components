@@ -2,9 +2,11 @@
 /* eslint-disable jsx-a11y/alt-text */
 import './Card.css';
 import { Vstack, Hstack } from '../Containers/Containers';
-import Button from '../Buttons/Buttons';
+import { Button } from '../Buttons/Buttons';
 import { Header1, Header2, Header3, Header4, Header5, Header6 } from '../Headers/Headers';
-import Image from '../Image/Image';
+import { Image } from '../Image/Image';
+import React from 'react';
+
 
 const Card = ({ children, icon, title, price, unit, currency, buttonTitle, buttonOnClick, mode }) => {
 
@@ -51,4 +53,4 @@ const Card = ({ children, icon, title, price, unit, currency, buttonTitle, butto
     )
 }
 
-export { Card }
+export { Card };

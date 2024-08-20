@@ -1,4 +1,5 @@
 import './Link.css'
+import React from 'react';
 
 const Link = ({ children, destination, color, mode, className }) => {
     return (

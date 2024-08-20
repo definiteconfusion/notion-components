@@ -1,4 +1,5 @@
 import "./Styles.css"
+import React from 'react';
 
 // Placeholder export for CSS styles
 const Style = (
@@ -6,4 +7,4 @@ const Style = (
     </div>
 );
 
-export { Style }
+export { Style };
