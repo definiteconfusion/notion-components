@@ -10,6 +10,13 @@ if [[ "$versionType" != "patch" && "$versionType" != "minor" && "$versionType" !
   exit 1
 fi
 
+# Ensure the working directory is clean
+if ! git diff-index --quiet HEAD --; then
+  echo "Git working directory not clean. Staging and committing all changes..."
+  git add .
+  git commit -m "Pre-version bump commit"
+fi
+
 # Increment the version
 npm version $versionType
 
