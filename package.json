@@ -1,8 +1,12 @@
 {
   "name": "notion-components-react",
   "description": "A library to replicate the components used by the Notion notes app",
-  "keywords": ["notion", "react", "components"],
-  "version": "1.0.5",
+  "keywords": [
+    "notion",
+    "react",
+    "components"
+  ],
+  "version": "1.0.6",
   "homepage": "https://micro.jakerase.dev",
   "bugs": "https://github.com/definiteconfusion/notion-components",
   "license": "MIT",
