@@ -40,7 +40,8 @@
   },
   "scripts": {
     "build": "webpack --config webpack.config.js",
-    "test": "react-scripts test"
+    "test": "react-scripts test",
+    "publish": "chmod +x publish.sh && ./publish.sh"
   },
   "eslintConfig": {
     "extends": [
