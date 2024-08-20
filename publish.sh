@@ -10,18 +10,8 @@ if [[ "$versionType" != "patch" && "$versionType" != "minor" && "$versionType" !
   exit 1
 fi
 
-# Ensure the working directory is clean
-if ! git diff-index --quiet HEAD --; then
-  echo "Git working directory not clean. Staging and committing all changes..."
-  git add .
-  git commit -m "Pre-version bump commit"
-fi
-
-# Increment the version
+# Increment the version in package.json
 npm version $versionType
-
-# Publish the package to npm
-npm publish
 
 # Stage all changes
 git add .
@@ -33,4 +23,7 @@ git commit -m "Publish version $version"
 # Push changes to the repository
 git push origin main
 
-echo "Package published and changes pushed to GitHub."
+# Publish the package to npm
+npm publish
+
+echo "Version $version published and changes pushed to GitHub."
