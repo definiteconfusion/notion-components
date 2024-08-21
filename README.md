@@ -1,5 +1,7 @@
 # Notion Components 📇
 
+### Work in progress, please be patient as I work to complete this project!
+
 ![!image](./Github%20Social%20Banner.png)
 
 ## **NOTICE** 😊
@@ -12,7 +14,7 @@ This project falls under the Creative Commons 4.0 Attribute Licence as outlined 
 
 ## Class System
 
-This project uses a class-based object modification system... so basically discounts tailwind. You can view each of the modification classes in the [Styles.sass](./src/Styles/Styles.sass) file, the first real modification class is on line **52**. For a full breakdown go to the [styles-readme](./src/Styles/styles-readme.md) in the same directory!
+This project uses a class-based object modification system... so basically discounts tailwind. You can view each of the modification classes in the [Styles.sass](./src/notion-components/Styles/Styles.sass) file, the first real modification class is on line **52**. For a full breakdown go to the [styles-readme](./src/notion-components/Styles/styles-readme.md) in the same directory!
 
 ## Modification
 

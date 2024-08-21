@@ -16,5 +16,6 @@
         "**/Thumbs.db": true,
         "**/.rmv/catalog/**": true,
         "*/_*": false
-    }
+    },
+    "discord.enabled": true
 }
