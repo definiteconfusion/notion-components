@@ -32,11 +32,13 @@ const Button = _ref => {
     children,
     mode,
     onClick,
-    className
+    className,
+    style
   } = _ref;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("button", {
     className: `button-main ${mode} ${className}`,
-    onClick: onClick
+    onClick: onClick,
+    style: style
   }, children);
 };
 
@@ -78,14 +80,16 @@ const Card = _ref => {
     currency,
     buttonTitle,
     buttonOnClick,
-    mode
+    mode,
+    style
   } = _ref;
   let buttonColorKeys = {
     "light": "midnight",
     "dark": "light"
   };
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default().createElement("div", {
-    className: `card-main-${mode}`
+    className: `card-main-${mode}`,
+    style: style
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default().createElement("div", {
     className: "card-content-container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default().createElement(_Containers_Containers__WEBPACK_IMPORTED_MODULE_1__.Vstack, {
@@ -138,7 +142,8 @@ const Vstack = _ref => {
   let {
     children,
     control,
-    padding
+    padding,
+    style
   } = _ref;
   if (children.length === undefined) {
     throw new Error("{'type':'error', 'code': 201, 'desc':'>1 Children Required','component': 'Vstack'}");
@@ -146,7 +151,8 @@ const Vstack = _ref => {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", {
       className: "vstack-main",
       style: {
-        alignItems: control
+        alignItems: control,
+        ...style
       }
     }, children.map((child, index) => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", {
       key: index,
@@ -162,7 +168,8 @@ const Hstack = _ref2 => {
   let {
     children,
     control,
-    padding
+    padding,
+    style
   } = _ref2;
   if (children.length === undefined) {
     throw new Error("{'type':'error', 'code': 201, 'desc':'>1 Children Required', 'component': 'Hstack'}");
@@ -170,7 +177,8 @@ const Hstack = _ref2 => {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", {
       className: "hstack-main",
       style: {
-        alignItems: control
+        alignItems: control,
+        ...style
       }
     }, children.map((child, index) => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", {
       key: index,
@@ -208,60 +216,72 @@ const Header1 = _ref => {
   let {
     children,
     mode,
-    className
+    className,
+    style
   } = _ref;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("h1", {
-    className: `header-one-main back-${mode} ${className}`
+    className: `header-one-main back-${mode} ${className}`,
+    style: style
   }, children);
 };
 const Header2 = _ref2 => {
   let {
     children,
     mode,
-    className
+    className,
+    style
   } = _ref2;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("h2", {
-    className: `header-two-main back-${mode} ${className}`
+    className: `header-two-main back-${mode} ${className}`,
+    style: style
   }, children);
 };
 const Header3 = _ref3 => {
   let {
     children,
     mode,
-    className
+    className,
+    style
   } = _ref3;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("h3", {
-    className: `header-three-main back-${mode} ${className}`
+    className: `header-three-main back-${mode} ${className}`,
+    style: style
   }, children);
 };
 const Header4 = _ref4 => {
   let {
     children,
     mode,
-    className
+    className,
+    style
   } = _ref4;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("h4", {
-    className: `header-four-main back-${mode} ${className}`
+    className: `header-four-main back-${mode} ${className}`,
+    style: style
   }, children);
 };
 const Header5 = _ref5 => {
   let {
     children,
     mode,
-    className
+    className,
+    style
   } = _ref5;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("h5", {
-    className: `header-five-main back-${mode} ${className}`
+    className: `header-five-main back-${mode} ${className}`,
+    style: style
   }, children);
 };
 const Header6 = _ref6 => {
   let {
     children,
     mode,
-    className
+    className,
+    style
   } = _ref6;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("h6", {
-    className: `header-six-main back-${mode} ${className}`
+    className: `header-six-main back-${mode} ${className}`,
+    style: style
   }, children);
 };
 
@@ -329,13 +349,15 @@ const Link = _ref => {
     destination,
     color,
     mode,
-    className
+    className,
+    style
   } = _ref;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("a", {
     href: destination,
     className: `link-main  back-${mode} ${className}`,
     style: {
-      color: color
+      color: color,
+      ...style
     }
   }, children);
 };
@@ -383,10 +405,12 @@ __webpack_require__.r(__webpack_exports__);
 const Tag = _ref => {
   let {
     title,
-    mode
+    mode,
+    style
   } = _ref;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", {
-    className: `tag-main ${mode}`
+    className: `tag-main ${mode}`,
+    style: style
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("p", {
     className: "tag-title"
   }, title));
