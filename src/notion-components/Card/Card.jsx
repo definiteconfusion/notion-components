@@ -8,7 +8,7 @@ import { Image } from '../Image/Image';
 import React from 'react';
 
 
-const Card = ({ children, icon, title, price, unit, currency, buttonTitle, buttonOnClick, mode }) => {
+const Card = ({ children, icon, title, price, unit, currency, buttonTitle, buttonOnClick, mode, style }) => {
 
     let buttonColorKeys = {
         "light":"midnight",
@@ -16,7 +16,7 @@ const Card = ({ children, icon, title, price, unit, currency, buttonTitle, butto
     }
 
     return (
-        <div className={`card-main-${mode}`}>
+        <div className={`card-main-${mode}`} style={style} >
             <div className="card-content-container">
                 <Vstack
                     control="start"

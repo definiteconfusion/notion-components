@@ -2,10 +2,10 @@
 
 ## Props
 
-- style
-- onClick
+- [x] style
+- [ ] onClick
 
 ## Components
 
-- icon (from multiple libraries)
-- code block
+- [ ] icon (from multiple libraries)
+- [ ] code block
