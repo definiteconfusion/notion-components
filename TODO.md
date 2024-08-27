@@ -12,5 +12,5 @@
 
 ## Documentation 
 
-- fixed spelling error (word: discount) in class system section of README
-- fix commands in modification section of README
+- [x] fixed spelling error (word: discount) in class system section of README
+- [x] fix commands in modification section of README

@@ -14,11 +14,7 @@ This project falls under the Creative Commons 4.0 Attribute Licence as outlined 
 
 ## Class System
 
-This project uses a class-based object modification system... so basically discounts tailwind. You can view each of the modification classes in the [Styles.sass](./src/notion-components/Styles/Styles.sass) file, the first real modification class is on line **52**. For a full breakdown go to the [styles-readme](./src/notion-components/Styles/styles-readme.md) in the same directory!
-
-## Modification
-
-To make changes, make a new directory, then inside, just make sure you have your component file in the `.jsx` format, and your style sheet in the `.css` format, then in the terminal simply run `bun run compile` (or `npm run compile` if you don't use Bun) to write your changes to the `/Build` directory with the rest of the files, and voila!
+This project uses a class-based object modification system... so basically discount tailwind. You can view each of the modification classes in the [Styles.sass](./src/notion-components/Styles/Styles.sass) file, the first real modification class is on line **52**. For a full breakdown go to the [styles-readme](./src/notion-components/Styles/styles-readme.md) in the same directory!
 
 ## [TODO[s]](./TODO.md)
 
