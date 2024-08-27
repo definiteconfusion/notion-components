@@ -20,11 +20,14 @@ return /******/ (() => { // webpackBootstrap
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   Button: () => (/* binding */ Button)
+/* harmony export */   Button: () => (/* binding */ Button),
+/* harmony export */   ButtonGrouper: () => (/* binding */ ButtonGrouper)
 /* harmony export */ });
 /* harmony import */ var _Buttons_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Buttons.css */ "./src/notion-components/Buttons/Buttons.css");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _Containers_Containers__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Containers/Containers */ "./src/notion-components/Containers/Containers.jsx");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
+
 
 
 const Button = _ref => {
@@ -35,11 +38,42 @@ const Button = _ref => {
     className,
     style
   } = _ref;
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("button", {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default().createElement("button", {
     className: `button-main ${mode} ${className}`,
     onClick: onClick,
     style: style
   }, children);
+};
+const ButtonGrouper = _ref2 => {
+  let {
+    children,
+    className,
+    style
+  } = _ref2;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default().createElement(_Containers_Containers__WEBPACK_IMPORTED_MODULE_1__.Hstack, {
+    control: "center",
+    padding: "0px",
+    style: {
+      width: 'max-content',
+      whiteSpace: 'nowrap',
+      ...style
+    },
+    className: className
+  }, react__WEBPACK_IMPORTED_MODULE_2___default().Children.map(children, (child, index) => {
+    const isFirst = index === 0;
+    const isLast = index === react__WEBPACK_IMPORTED_MODULE_2___default().Children.count(children) - 1;
+    let className;
+    if (isFirst) {
+      className = 'button-grouper-cap-start';
+    } else if (isLast) {
+      className = 'button-grouper-cap-end';
+    } else {
+      className = 'button-grouper-inner';
+    }
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default().cloneElement(child, {
+      className: `${className} ${child.props.className || ''}`.trim()
+    });
+  }));
 };
 
 
@@ -448,6 +482,22 @@ ___CSS_LOADER_EXPORT___.push([module.id, `button {
   white-space: nowrap;
   font-size: 1em;
   cursor: pointer;
+}
+
+.button-grouper-main {
+  width: min-content;
+}
+
+.button-grouper-cap-start {
+  border-radius: 0.5rem 0 0 0.5rem;
+}
+
+.button-grouper-cap-end {
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.button-grouper-inner {
+  border-radius: 0;
 }
 `, ""]);
 // Exports
@@ -4618,6 +4668,7 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   Button: () => (/* reexport safe */ _notion_components_Buttons_Buttons__WEBPACK_IMPORTED_MODULE_0__.Button),
+/* harmony export */   ButtonGrouper: () => (/* reexport safe */ _notion_components_Buttons_Buttons__WEBPACK_IMPORTED_MODULE_0__.ButtonGrouper),
 /* harmony export */   Card: () => (/* reexport safe */ _notion_components_Card_Card__WEBPACK_IMPORTED_MODULE_7__.Card),
 /* harmony export */   Header1: () => (/* reexport safe */ _notion_components_Headers_Headers__WEBPACK_IMPORTED_MODULE_5__.Header1),
 /* harmony export */   Header2: () => (/* reexport safe */ _notion_components_Headers_Headers__WEBPACK_IMPORTED_MODULE_5__.Header2),

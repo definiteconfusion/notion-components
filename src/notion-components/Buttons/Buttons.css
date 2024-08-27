@@ -10,4 +10,20 @@ button {
   cursor: pointer;
 }
 
+.button-grouper-main {
+  width: min-content;
+}
+
+.button-grouper-cap-start {
+  border-radius: 0.5rem 0 0 0.5rem;
+}
+
+.button-grouper-cap-end {
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.button-grouper-inner {
+  border-radius: 0;
+}
+
 /*# sourceMappingURL=Buttons.css.map */

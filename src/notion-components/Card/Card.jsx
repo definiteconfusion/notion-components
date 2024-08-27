@@ -3,7 +3,7 @@
 import './Card.css';
 import { Vstack, Hstack } from '../Containers/Containers';
 import { Button } from '../Buttons/Buttons';
-import { Header1, Header2, Header3, Header4, Header5, Header6 } from '../Headers/Headers';
+import { Header3 } from '../Headers/Headers';
 import { Image } from '../Image/Image';
 import React from 'react';
 
