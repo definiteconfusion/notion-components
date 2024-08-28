@@ -11,11 +11,11 @@ const Button = ({ children, mode, onClick, className, style }) => {
     );
 }
 
-const ButtonGrouper = ({ children, className, style }) => {
+const ButtonGrouper = ({ children, padding = '0px', className, style }) => {
     return (
         <Hstack
             control="center"
-            padding="0px"
+            padding={padding}
             style={{width: 'max-content', whiteSpace: 'nowrap', ...style}}
             className={className}
         >
