@@ -11,6 +11,14 @@ const Button = ({ children, mode, onClick, className, style }) => {
     );
 }
 
+const WideButton = ({ children, mode, onClick, className, style, edging }) => {
+    return (
+        <button className={`button-main max-button-width ${mode} ${className}`} onClick={onClick} style={{marginInline: edging, ...style}} >
+            {children}
+        </button>
+    );
+}
+
 const ButtonGrouper = ({ children, padding = '0px', className, style }) => {
     return (
         <Hstack
@@ -40,4 +48,4 @@ const ButtonGrouper = ({ children, padding = '0px', className, style }) => {
     );
 }
 
-export { Button, ButtonGrouper };
+export { Button, WideButton, ButtonGrouper };

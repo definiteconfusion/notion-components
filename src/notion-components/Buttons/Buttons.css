@@ -10,6 +10,11 @@ button {
   cursor: pointer;
 }
 
+.max-button-width {
+  width: 100%;
+  margin-inline: 1rem;
+}
+
 .button-grouper-main {
   width: min-content;
 }
