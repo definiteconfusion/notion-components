@@ -2,7 +2,7 @@ const path = require('path');
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 
 module.exports = {
-  entry: './src/index.jsx', // Replace with your entry file
+  entry: './src/pack.jsx', // Replace with your entry file
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),

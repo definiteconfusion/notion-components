@@ -1,5 +1,4 @@
 /* eslint-disable no-unused-vars */
-/* eslint-disable jsx-a11y/alt-text */
 import './Card.css';
 import { Vstack, Hstack } from '../Containers/Containers';
 import { Button } from '../Buttons/Buttons';
