@@ -4,7 +4,7 @@ button {
 
 .button-main {
   padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
+  border-radius: 0.35rem;
   white-space: nowrap;
   font-size: 1em;
   cursor: pointer;
@@ -20,11 +20,11 @@ button {
 }
 
 .button-grouper-cap-start {
-  border-radius: 0.5rem 0 0 0.5rem;
+  border-radius: 0.35rem 0 0 0.35rem;
 }
 
 .button-grouper-cap-end {
-  border-radius: 0 0.5rem 0.5rem 0;
+  border-radius: 0 0.35rem 0.35rem 0;
 }
 
 .button-grouper-inner {

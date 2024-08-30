@@ -1,9 +1,11 @@
+$object-border-radius: 0.35rem
+
 button
     border: none
 
 .button-main
     padding: 0.5rem 1rem
-    border-radius: 0.5rem
+    border-radius: $object-border-radius
     white-space: nowrap
     font-size: 1em
     cursor: pointer
@@ -16,9 +18,9 @@ button
     width: min-content
 
 .button-grouper-cap-start
-    border-radius: 0.5rem 0 0 0.5rem
+    border-radius: $object-border-radius 0 0 $object-border-radius
 .button-grouper-cap-end
-    border-radius: 0 0.5rem 0.5rem 0
+    border-radius: 0 $object-border-radius $object-border-radius 0
 
 .button-grouper-inner
     border-radius: 0

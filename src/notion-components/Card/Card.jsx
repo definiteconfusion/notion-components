@@ -7,12 +7,7 @@ import { Image } from '../Image/Image';
 import React from 'react';
 
 
-const Card = ({ children, icon, title, price, unit, currency, buttonTitle, buttonOnClick, mode, style }) => {
-
-    let buttonColorKeys = {
-        "light":"midnight",
-        "dark":"light"
-    }
+const Card = ({ children, icon, title, price, unit, currency, tags, mode, style }) => {
 
     return (
         <div className={`card-main-${mode}`} style={style} >
@@ -32,7 +27,7 @@ const Card = ({ children, icon, title, price, unit, currency, buttonTitle, butto
                         padding="0.5rem"
                     >
                         <Header3 mode={`${mode} card-title-${mode}`}>{title}</Header3>
-                        {children}
+                        {tags}
                     </Hstack>
                     <Hstack
                         control="end"
@@ -40,12 +35,12 @@ const Card = ({ children, icon, title, price, unit, currency, buttonTitle, butto
                         <p className={`card-price-${mode}`}>{currency}{price}</p>
                         <p className={`card-unit-${mode}`}>{unit}</p>
                     </Hstack>
-                    <Button
-                        mode={buttonColorKeys[mode]}
-                        onClick={buttonOnClick}
+                    <Hstack
+                        control="center"
+                        padding="0.5rem"
                     >
-                    {buttonTitle}
-                    </Button>
+                        {children}
+                    </Hstack>
                 </Vstack>
             </div>
         </div>

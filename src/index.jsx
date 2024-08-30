@@ -32,7 +32,9 @@ root.render(
                 price="£10"
                 unit="per kilo"
                 mode="dark"
-                buttonTitle="Inspect: ⌘ + ⌥ + c"
-            />
+            >
+                <Button mode="affirmative" onClick={() => console.log("Two")}>Two</Button>
+                {/* <Button mode="constructive" onClick={() => console.log("Three")}>Three</Button> */}
+            </Card>
         </Vstack>
 );
