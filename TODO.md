@@ -3,12 +3,13 @@
 ## Props
 
 - [x] style
-- [ ] onClick
+- [x] onClick
 
 ## Components
 
 - [ ] icon (from multiple libraries)
 - [ ] code block
+- [ ] add click style for all buttons
 
 ## Documentation 
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { Button, WideButton, ButtonGrouper, Hstack, Vstack, Image, Card } from './pack'
+import { Code, WrappedCode, Button, WideButton, ButtonGrouper, Hstack, Vstack, Image, Card } from './pack'
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -36,5 +36,30 @@ root.render(
                 <Button mode="affirmative" onClick={() => console.log("Two")}>Two</Button>
                 {/* <Button mode="constructive" onClick={() => console.log("Three")}>Three</Button> */}
             </Card>
+            <WrappedCode language="py">
+            {`import random
+import string
+
+class database:
+    @staticmethod
+    def userVett(self, userName:str="NaN", passkey:str="NaN"):
+        try:
+            key = utils.sqlite.command(self, f"SELECT passkey FROM users WHERE userName = '{userName}'")[0][0]
+            if key == passkey:
+                return True
+            else:
+                return False
+        except:
+            return False
+
+def error(type:int):
+    errors = {
+        401: {"401": "Unauthorized"},
+        500: {"500": "Internal Server Error"},
+        200: {"200": "Success"}
+    }
+    return errors[type]
+            `}
+            </WrappedCode>
         </Vstack>
 );
