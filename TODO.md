@@ -8,7 +8,7 @@
 ## Components
 
 - [ ] icon (from multiple libraries)
-- [ ] code block
+- [x] code block
 - [ ] add click style for all buttons
 
 ## Documentation 
