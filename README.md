@@ -27,6 +27,7 @@ This project uses a class-based object modification system... so basically disco
 - [Images](./src/notion-components/Image/image-readme.md)
 - [Card](./src/notion-components/Card/card-readme.md)
 - [Tag](./src/notion-components/Tag/links-readme.md)
+- [Code](./src/notion-components/Code/code-readme.md)
 
 ## Current Contributors
 

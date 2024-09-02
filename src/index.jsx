@@ -37,28 +37,9 @@ root.render(
                 {/* <Button mode="constructive" onClick={() => console.log("Three")}>Three</Button> */}
             </Card>
             <WrappedCode language="py">
-            {`import random
-import string
-
-class database:
-    @staticmethod
-    def userVett(self, userName:str="NaN", passkey:str="NaN"):
-        try:
-            key = utils.sqlite.command(self, f"SELECT passkey FROM users WHERE userName = '{userName}'")[0][0]
-            if key == passkey:
-                return True
-            else:
-                return False
-        except:
-            return False
-
-def error(type:int):
-    errors = {
-        401: {"401": "Unauthorized"},
-        500: {"500": "Internal Server Error"},
-        200: {"200": "Success"}
-    }
-    return errors[type]
+            {`import requests
+response = requests.get('https://api.github.com')
+print(response.json())
             `}
             </WrappedCode>
         </Vstack>
