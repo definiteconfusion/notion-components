@@ -22,18 +22,46 @@ const keyWords = {
     strings: /(".*?"|'.*?'|`.*?`)/g,
     comments: /\/\/.*$|\/\*[\s\S]*?\*\//gm,
   },
-  html: {
-    tags: /(&lt;\/?\w+&gt;)/g,
-    attributes: /\b(\w+)(?=\s*=\s*["'])/g,
-    strings: /(".*?"|'.*?')/g,
-    comments: /&lt;!--[\s\S]*?--&gt;/g,
+  "java": {
+    "keywords": [
+      "public", "private", "protected", "class", "interface", "extends", "implements", "new", "if", "else", "switch", "case", "default", "for", "while", "do", "break", "continue", "return", "try", "catch", "finally", "throw", "throws", "import", "package", "static", "void", "int", "double", "float", "char", "boolean", "true", "false", "null"
+    ],
+    "builtins": [
+      "System", "String", "Integer", "Double", "Math", "Object", "Thread", "Runnable", "ArrayList", "HashMap", "HashSet"
+    ],
+    "strings": /(".*?"|'.*?')/g,
+    "comments": /\/\/.*$|\/\*[\s\S]*?\*\//gm
   },
-  css: {
-    selectors: /([.#]?\w+)(?=\s*\{)/g,
-    properties: /\b(\w+)(?=\s*:)/g,
-    values: /:\s*(\w+|\d+|\#[0-9a-fA-F]+|rgb\([^\)]+\)|rgba\([^\)]+\))/g,
-    comments: /\/\*[\s\S]*?\*\//gm,
+  "csharp": {
+    "keywords": [
+      "public", "private", "protected", "internal", "class", "interface", "struct", "enum", "new", "if", "else", "switch", "case", "default", "for", "while", "do", "break", "continue", "return", "try", "catch", "finally", "throw", "using", "namespace", "static", "void", "int", "double", "float", "char", "bool", "true", "false", "null"
+    ],
+    "builtins": [
+      "Console", "String", "Int32", "Double", "Math", "Object", "Thread", "Task", "List", "Dictionary", "HashSet"
+    ],
+    "strings": /(".*?"|'.*?')/g,
+    "comments": /\/\/.*$|\/\*[\s\S]*?\*\//gm
   },
+  "ruby": {
+    "keywords": [
+      "def", "if", "elsif", "else", "end", "for", "while", "do", "break", "next", "redo", "retry", "return", "yield", "begin", "rescue", "ensure", "raise", "module", "class", "self", "super", "true", "false", "nil", "and", "or", "not", "in", "unless", "until", "then", "when"
+    ],
+    "builtins": [
+      "puts", "print", "p", "gets", "chomp", "to_s", "to_i", "to_a", "to_h", "Array", "Hash", "String", "Integer", "Float", "Range"
+    ],
+    "strings": /(".*?"|'.*?')/g,
+    "comments": /#.*$/gm
+  },
+    "rust": {
+      "keywords": [
+        "fn", "let", "mut", "if", "else", "match", "while", "for", "loop", "break", "continue", "return", "struct", "enum", "impl", "trait", "use", "mod", "pub", "crate", "super", "self", "as", "const", "static", "move", "async", "await", "dyn", "type", "union", "ref", "true", "false", "None", "Some", "Ok", "Err"
+      ],
+      "builtins": [
+        "println!", "format!", "panic!", "vec!", "String", "Option", "Result", "HashMap", "HashSet", "Box", "Rc", "Arc", "std", "io", "fs", "env", "cmp", "mem", "str"
+      ],
+      "strings": /(".*?"|'.*?')/g,
+      "comments": /\/\/.*$|\/\*[\s\S]*?\*\//gm
+    }
 };
 
 function highlightSyntax(codeContent, language) {

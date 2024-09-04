@@ -36,10 +36,8 @@ root.render(
                 <Button mode="affirmative" onClick={() => console.log("Two")}>Two</Button>
                 {/* <Button mode="constructive" onClick={() => console.log("Three")}>Three</Button> */}
             </Card>
-            <WrappedCode language="py">
-            {`import requests
-response = requests.get('https://api.github.com')
-print(response.json())
+            <WrappedCode language="rust">
+            {`
             `}
             </WrappedCode>
         </Vstack>
