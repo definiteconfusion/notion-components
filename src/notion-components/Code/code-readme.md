@@ -17,7 +17,10 @@
 
   ```html
   <!-- with the wrapping background div -->
-   <WrappedCode language="py">
+   <WrappedCode 
+	   language="py"
+	   mode="dark"
+   >
             {`import requests
 response = requests.get('https://api.github.com')
 print(response.json())
@@ -25,7 +28,10 @@ print(response.json())
     </WrappedCode>
 
     <!-- without the wrapping background div -->
-    <Code language="py">
+    <Code 
+	    language="py"
+	    mode="dark"
+    >
             {`import requests
 response = requests.get('https://api.github.com')
 print(response.json())

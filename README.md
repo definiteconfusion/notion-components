@@ -1,6 +1,6 @@
 # Notion Components 📇
 
-### Work in progress, please be patient as I work to complete this project!
+### [README](https://jakerase.notion.site/Notion-Components-eacec70711124f5ebe63470a61cbfbfe) is Migrating to Notion!!!!
 
 ![!image](./Github%20Social%20Banner.png)
 
@@ -20,14 +20,14 @@ This project uses a class-based object modification system... so basically disco
 
 ## Table of Contents
 
-- [Buttons](./src/notion-components/Buttons/buttons-readme.md)
+- [Buttons](https://jakerase.notion.site/Buttons-a934b2aeee7c4202a49bba6a046d4356)
 - [Containers](./src/notion-components/Containers/containers-reame.md)
 - [Headers](./src/notion-components/Headers/headers-readme.md)
 - [Links](./src/notion-components/Link/links-readme.md)
 - [Images](./src/notion-components/Image/image-readme.md)
 - [Card](./src/notion-components/Card/card-readme.md)
 - [Tag](./src/notion-components/Tag/links-readme.md)
-- [Code](./src/notion-components/Code/code-readme.md)
+- [Code](https://jakerase.notion.site/Code-201503ba50f64827a4e6fa75c6954b1b)
 
 ## Current Contributors
 
