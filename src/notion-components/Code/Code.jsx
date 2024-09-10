@@ -64,8 +64,12 @@ const keyWords = {
     }
 };
 
-function highlightSyntax(codeContent, language) {
+function highlightSyntax(codeContent, language, mode) {
   if (!codeContent || !keyWords[language]) return codeContent;
+
+  const modeClassing = (type) => {
+    return mode === 'dark' ? `${type}-dark` : `${type}-light`;
+  }
 
   // Get syntax categories for the specified language
   const { keywords, builtins, strings, comments, tags, attributes, selectors, properties, values } = keyWords[language];
@@ -75,37 +79,37 @@ function highlightSyntax(codeContent, language) {
 
   // Highlight strings
   if (strings) {
-    codeContent = codeContent.replace(strings, `<span class="string">$1</span>`);
+    codeContent = codeContent.replace(strings, `<span class="${modeClassing('string')}">$1</span>`);
   }
 
   // Highlight comments
   if (comments) {
-    codeContent = codeContent.replace(comments, `<span class="comment">$&</span>`);
+    codeContent = codeContent.replace(comments, `<span class="${modeClassing('comment')}">$&</span>`);
   }
 
   // Highlight tags (for HTML)
   if (tags) {
-    codeContent = codeContent.replace(tags, `<span class="tag">$1</span>`);
+    codeContent = codeContent.replace(tags, `<span class="${modeClassing('tag')}">$1</span>`);
   }
 
   // Highlight attributes (for HTML)
   if (attributes) {
-    codeContent = codeContent.replace(attributes, `<span class="attribute">$1</span>`);
+    codeContent = codeContent.replace(attributes, `<span class="${modeClassing('attribute')}">$1</span>`);
   }
 
   // Highlight selectors (for CSS)
   if (selectors) {
-    codeContent = codeContent.replace(selectors, `<span class="selector">$1</span>`);
+    codeContent = codeContent.replace(selectors, `<span class="${modeClassing('selector')}">$1</span>`);
   }
 
   // Highlight properties (for CSS)
   if (properties) {
-    codeContent = codeContent.replace(properties, `<span class="property">$1</span>`);
+    codeContent = codeContent.replace(properties, `<span class="${modeClassing('property')}">$1</span>`);
   }
 
   // Highlight values (for CSS)
   if (values) {
-    codeContent = codeContent.replace(values, `<span class="value">$1</span>`);
+    codeContent = codeContent.replace(values, `<span class="${modeClassing('value')}">$1</span>`);
   }
 
   // Highlight built-in functions or objects
@@ -120,14 +124,14 @@ function highlightSyntax(codeContent, language) {
   if (keywords) {
     keywords.forEach((keyword) => {
       const regex = new RegExp(`(?<!<[^>]*)\\b${keyword}\\b(?![^<]*>)`, 'g');
-      codeContent = codeContent.replace(regex, `<span class="keyword">${keyword}</span>`);
+      codeContent = codeContent.replace(regex, `<span class="${modeClassing('keyword')}">${keyword}</span>`);
     });
   }
 
   return codeContent;
 }
 
-const Code = ({ children, language }) => {
+const Code = ({ children, language, mode }) => {
   const codeRef = useRef(null);
 
   useEffect(() => {
@@ -139,9 +143,9 @@ const Code = ({ children, language }) => {
   return <pre ref={codeRef} className={`language-${language}`} />;
 };
 
-const WrappedCode = ({ children, language }) => {
+const WrappedCode = ({ children, language, mode }) => {
   return (
-    <div className="code-container">
+    <div className={`code-container-${mode}`}>
       <Code language={language}>{children}</Code>
     </div>
   );

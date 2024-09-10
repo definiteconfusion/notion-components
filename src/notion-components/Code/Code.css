@@ -1,51 +1,105 @@
-.keyword {
+.keyword-light {
   color: #BE8991;
   font-family: monospace;
 }
 
-.builtin {
+.builtin-light {
   color: #BADB54;
   font-family: monospace;
 }
 
-.string {
+.string-light {
   color: #BADB54;
   font-family: monospace;
 }
 
-.comment {
+.comment-light {
   color: #8B765D;
   font-family: monospace;
 }
 
-.tag {
+.tag-light {
   color: #BADB54;
   font-family: monospace;
 }
 
-.attribute {
+.attribute-light {
   color: #BADB54;
   font-family: monospace;
 }
 
-.selector {
+.selector-light {
   color: #BADB54;
   font-family: monospace;
 }
 
-.property {
+.property-light {
   color: #BADB54;
   font-family: monospace;
 }
 
-.value {
+.value-light {
   color: #98c379;
   font-family: monospace;
 }
 
-.code-container {
+.keyword-dark {
+  color: #0077AA;
+  font-family: monospace;
+}
+
+.builtin-dark {
+  color: #689B04;
+  font-family: monospace;
+}
+
+.string-dark {
+  color: #689B04;
+  font-family: monospace;
+}
+
+.comment-dark {
+  color: #708090;
+  font-family: monospace;
+}
+
+.tag-dark {
+  color: #689B04;
+  font-family: monospace;
+}
+
+.attribute-dark {
+  color: #689B04;
+  font-family: monospace;
+}
+
+.selector-dark {
+  color: #689B04;
+  font-family: monospace;
+}
+
+.property-dark {
+  color: #689B04;
+  font-family: monospace;
+}
+
+.value-dark {
+  color: #98c379;
+  font-family: monospace;
+}
+
+.code-container-light {
+  background-color: #F7F6F3;
+  color: #999999;
+  padding-inline: 1.5rem;
+  padding-block: 1rem;
+  border-radius: 1rem;
+  overflow-x: auto;
+}
+
+.code-container-dark {
   background-color: #2C2C2C;
-  color: #d4d4d4;
+  color: #999999;
   padding-inline: 1.5rem;
   padding-block: 1rem;
   border-radius: 1rem;

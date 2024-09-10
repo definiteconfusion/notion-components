@@ -36,8 +36,14 @@ root.render(
                 <Button mode="affirmative" onClick={() => console.log("Two")}>Two</Button>
                 {/* <Button mode="constructive" onClick={() => console.log("Three")}>Three</Button> */}
             </Card>
-            <WrappedCode language="rust">
-            {`
+            <WrappedCode 
+                language="py"
+                mode="light"
+            >
+            {`# Hello World
+def hello_world():
+            print('Hello, world!')
+}
             `}
             </WrappedCode>
         </Vstack>
