@@ -8,6 +8,7 @@ import { Header1, Header2, Header3, Header4, Header5, Header6 } from './notion-c
 import { Tag } from './notion-components/Tag/Tag';
 import { Card } from './notion-components/Card/Card';
 import { Code, WrappedCode } from './notion-components/Code/Code';
+import { ToolTip } from './notion-components/Tooltips/Tooltips';
 
 // Export the components
 export {
@@ -28,5 +29,6 @@ export {
   Tag,
   Card,
   Code,
-  WrappedCode
+  WrappedCode,
+  ToolTip
 };

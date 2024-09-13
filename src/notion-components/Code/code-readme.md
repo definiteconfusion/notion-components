@@ -1,3 +1,7 @@
+___
+# Migrated to [Notion](https://jakerase.notion.site/Card-b293266b6bfb4bf786cc1dcdcf982a2a) on 9/9/24
+___
+
 # Code
 
 ## Styles (More on the Way w/ custom themes later)

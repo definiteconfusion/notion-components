@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { Code, WrappedCode, Button, WideButton, ButtonGrouper, Hstack, Vstack, Image, Card } from './pack'
+import { Code, WrappedCode, Button, WideButton, ButtonGrouper, Hstack, Vstack, Image, Card, ToolTip } from './pack'
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -20,25 +20,30 @@ root.render(
                     <Button mode="destructive" onClick={() => console.log("Four")}>Four</Button>
                     <Button mode="midnight" onClick={() => console.log("Five")}>Five</Button>
                 </ButtonGrouper>
-                    <WideButton
-                        edging="2rem"
+                    <ToolTip
+                        label="Sign-in"
                     >
-                        Sign-in
-                    </WideButton>
+                        <WideButton
+                            edging="2rem"
+                        >
+                            Sign-in
+                        </WideButton>
+                    </ToolTip>
             </Hstack>
             <Card
-                icon="https://via.placeholder.com/500"
-                title="Title"
-                price="£10"
-                unit="per kilo"
-                mode="dark"
-            >
-                <Button mode="affirmative" onClick={() => console.log("Two")}>Two</Button>
-                {/* <Button mode="constructive" onClick={() => console.log("Three")}>Three</Button> */}
-            </Card>
+    icon="https://via.placeholder.com/500"
+    title="Title"
+    price="10"
+    currency="£"
+    unit="per kilo"
+    mode="dark"
+>
+    <Button mode="affirmative" onClick={() => console.log("Two")}>Add to Cart</Button>
+    <Button mode="light" onClick={() => console.log("Three")}>Details</Button>
+</Card>
             <WrappedCode 
                 language="py"
-                mode="light"
+                mode="dark"
             >
             {`# Hello World
 def hello_world():
