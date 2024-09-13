@@ -21,7 +21,8 @@ return /******/ (() => { // webpackBootstrap
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   Button: () => (/* binding */ Button),
-/* harmony export */   ButtonGrouper: () => (/* binding */ ButtonGrouper)
+/* harmony export */   ButtonGrouper: () => (/* binding */ ButtonGrouper),
+/* harmony export */   WideButton: () => (/* binding */ WideButton)
 /* harmony export */ });
 /* harmony import */ var _Buttons_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Buttons.css */ "./src/notion-components/Buttons/Buttons.css");
 /* harmony import */ var _Containers_Containers__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Containers/Containers */ "./src/notion-components/Containers/Containers.jsx");
@@ -44,15 +45,34 @@ const Button = _ref => {
     style: style
   }, children);
 };
-const ButtonGrouper = _ref2 => {
+const WideButton = _ref2 => {
   let {
     children,
+    mode,
+    onClick,
+    className,
+    style,
+    edging
+  } = _ref2;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default().createElement("button", {
+    className: `button-main max-button-width ${mode} ${className}`,
+    onClick: onClick,
+    style: {
+      marginInline: edging,
+      ...style
+    }
+  }, children);
+};
+const ButtonGrouper = _ref3 => {
+  let {
+    children,
+    padding = '0px',
     className,
     style
-  } = _ref2;
+  } = _ref3;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default().createElement(_Containers_Containers__WEBPACK_IMPORTED_MODULE_1__.Hstack, {
     control: "center",
-    padding: "0px",
+    padding: padding,
     style: {
       width: 'max-content',
       whiteSpace: 'nowrap',
@@ -111,15 +131,10 @@ const Card = _ref => {
     price,
     unit,
     currency,
-    buttonTitle,
-    buttonOnClick,
+    tags,
     mode,
     style
   } = _ref;
-  let buttonColorKeys = {
-    "light": "midnight",
-    "dark": "light"
-  };
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default().createElement("div", {
     className: `card-main-${mode}`,
     style: style
@@ -138,16 +153,177 @@ const Card = _ref => {
     padding: "0.5rem"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default().createElement(_Headers_Headers__WEBPACK_IMPORTED_MODULE_3__.Header3, {
     mode: `${mode} card-title-${mode}`
-  }, title), children), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default().createElement(_Containers_Containers__WEBPACK_IMPORTED_MODULE_1__.Hstack, {
+  }, title), tags), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default().createElement(_Containers_Containers__WEBPACK_IMPORTED_MODULE_1__.Hstack, {
     control: "end"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default().createElement("p", {
     className: `card-price-${mode}`
   }, currency, price), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default().createElement("p", {
     className: `card-unit-${mode}`
-  }, unit)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default().createElement(_Buttons_Buttons__WEBPACK_IMPORTED_MODULE_2__.Button, {
-    mode: buttonColorKeys[mode],
-    onClick: buttonOnClick
-  }, buttonTitle))));
+  }, unit)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default().createElement(_Containers_Containers__WEBPACK_IMPORTED_MODULE_1__.Hstack, {
+    control: "center",
+    padding: "0.5rem"
+  }, children))));
+};
+
+
+/***/ }),
+
+/***/ "./src/notion-components/Code/Code.jsx":
+/*!*********************************************!*\
+  !*** ./src/notion-components/Code/Code.jsx ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Code: () => (/* binding */ Code),
+/* harmony export */   WrappedCode: () => (/* binding */ WrappedCode)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Code_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Code.css */ "./src/notion-components/Code/Code.css");
+
+
+const keyWords = {
+  py: {
+    keywords: ['def', 'if', 'elif', 'else', 'for', 'while', 'return', 'import', 'from', 'as', 'in', 'True', 'False', 'None', 'and', 'or', 'not', 'break', 'continue', 'pass', 'class', 'is', 'lambda', 'try', 'except', 'finally', 'raise', 'assert', 'with', 'yield', 'global', 'nonlocal'],
+    builtins: ['print', 'len', 'range', 'str', 'int', 'float', 'list', 'dict', 'set', 'tuple', 'type', 'help'],
+    strings: /(".*?"|'.*?')/g,
+    comments: /#.*$/gm
+  },
+  js: {
+    keywords: ['function', 'if', 'else', 'return', 'var', 'let', 'const', 'for', 'while', 'do', 'break', 'continue', 'switch', 'case', 'default', 'import', 'export', 'from', 'as', 'new', 'try', 'catch', 'finally', 'throw', 'class', 'extends', 'super', 'this', 'typeof', 'instanceof'],
+    builtins: ['console', 'window', 'document', 'Math', 'JSON', 'Date', 'Promise', 'Array', 'String', 'Object', 'Number'],
+    strings: /(".*?"|'.*?'|`.*?`)/g,
+    comments: /\/\/.*$|\/\*[\s\S]*?\*\//gm
+  },
+  "java": {
+    "keywords": ["public", "private", "protected", "class", "interface", "extends", "implements", "new", "if", "else", "switch", "case", "default", "for", "while", "do", "break", "continue", "return", "try", "catch", "finally", "throw", "throws", "import", "package", "static", "void", "int", "double", "float", "char", "boolean", "true", "false", "null"],
+    "builtins": ["System", "String", "Integer", "Double", "Math", "Object", "Thread", "Runnable", "ArrayList", "HashMap", "HashSet"],
+    "strings": /(".*?"|'.*?')/g,
+    "comments": /\/\/.*$|\/\*[\s\S]*?\*\//gm
+  },
+  "csharp": {
+    "keywords": ["public", "private", "protected", "internal", "class", "interface", "struct", "enum", "new", "if", "else", "switch", "case", "default", "for", "while", "do", "break", "continue", "return", "try", "catch", "finally", "throw", "using", "namespace", "static", "void", "int", "double", "float", "char", "bool", "true", "false", "null"],
+    "builtins": ["Console", "String", "Int32", "Double", "Math", "Object", "Thread", "Task", "List", "Dictionary", "HashSet"],
+    "strings": /(".*?"|'.*?')/g,
+    "comments": /\/\/.*$|\/\*[\s\S]*?\*\//gm
+  },
+  "ruby": {
+    "keywords": ["def", "if", "elsif", "else", "end", "for", "while", "do", "break", "next", "redo", "retry", "return", "yield", "begin", "rescue", "ensure", "raise", "module", "class", "self", "super", "true", "false", "nil", "and", "or", "not", "in", "unless", "until", "then", "when"],
+    "builtins": ["puts", "print", "p", "gets", "chomp", "to_s", "to_i", "to_a", "to_h", "Array", "Hash", "String", "Integer", "Float", "Range"],
+    "strings": /(".*?"|'.*?')/g,
+    "comments": /#.*$/gm
+  },
+  "rust": {
+    "keywords": ["fn", "let", "mut", "if", "else", "match", "while", "for", "loop", "break", "continue", "return", "struct", "enum", "impl", "trait", "use", "mod", "pub", "crate", "super", "self", "as", "const", "static", "move", "async", "await", "dyn", "type", "union", "ref", "true", "false", "None", "Some", "Ok", "Err"],
+    "builtins": ["println!", "format!", "panic!", "vec!", "String", "Option", "Result", "HashMap", "HashSet", "Box", "Rc", "Arc", "std", "io", "fs", "env", "cmp", "mem", "str"],
+    "strings": /(".*?"|'.*?')/g,
+    "comments": /\/\/.*$|\/\*[\s\S]*?\*\//gm
+  }
+};
+function highlightSyntax(codeContent, language, mode) {
+  if (!codeContent || !keyWords[language]) return codeContent;
+  const modeClassing = type => {
+    return mode === 'dark' ? `${type}-dark` : `${type}-light`;
+  };
+
+  // Get syntax categories for the specified language
+  const {
+    keywords,
+    builtins,
+    strings,
+    comments,
+    tags,
+    attributes,
+    selectors,
+    properties,
+    values
+  } = keyWords[language];
+
+  // Escape HTML special characters
+  codeContent = codeContent.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+  // Highlight strings
+  if (strings) {
+    codeContent = codeContent.replace(strings, `<span class="${modeClassing('string')}">$1</span>`);
+  }
+
+  // Highlight comments
+  if (comments) {
+    codeContent = codeContent.replace(comments, `<span class="${modeClassing('comment')}">$&</span>`);
+  }
+
+  // Highlight tags (for HTML)
+  if (tags) {
+    codeContent = codeContent.replace(tags, `<span class="${modeClassing('tag')}">$1</span>`);
+  }
+
+  // Highlight attributes (for HTML)
+  if (attributes) {
+    codeContent = codeContent.replace(attributes, `<span class="${modeClassing('attribute')}">$1</span>`);
+  }
+
+  // Highlight selectors (for CSS)
+  if (selectors) {
+    codeContent = codeContent.replace(selectors, `<span class="${modeClassing('selector')}">$1</span>`);
+  }
+
+  // Highlight properties (for CSS)
+  if (properties) {
+    codeContent = codeContent.replace(properties, `<span class="${modeClassing('property')}">$1</span>`);
+  }
+
+  // Highlight values (for CSS)
+  if (values) {
+    codeContent = codeContent.replace(values, `<span class="${modeClassing('value')}">$1</span>`);
+  }
+
+  // Highlight built-in functions or objects
+  if (builtins) {
+    builtins.forEach(builtin => {
+      const regex = new RegExp(`(?<!<[^>]*)\\b${builtin}\\b(?![^<]*>)`, 'g');
+      codeContent = codeContent.replace(regex, `<span class="builtin">${builtin}</span>`);
+    });
+  }
+
+  // Highlight keywords
+  if (keywords) {
+    keywords.forEach(keyword => {
+      const regex = new RegExp(`(?<!<[^>]*)\\b${keyword}\\b(?![^<]*>)`, 'g');
+      codeContent = codeContent.replace(regex, `<span class="${modeClassing('keyword')}">${keyword}</span>`);
+    });
+  }
+  return codeContent;
+}
+const Code = _ref => {
+  let {
+    children,
+    language,
+    mode
+  } = _ref;
+  const codeRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+    if (codeRef.current) {
+      codeRef.current.innerHTML = highlightSyntax(children, language);
+    }
+  }, [children, language]);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("pre", {
+    ref: codeRef,
+    className: `language-${language}`
+  });
+};
+const WrappedCode = _ref2 => {
+  let {
+    children,
+    language,
+    mode
+  } = _ref2;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: `code-container-${mode}`
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Code, {
+    language: language
+  }, children));
 };
 
 
@@ -179,7 +355,17 @@ const Vstack = _ref => {
     style
   } = _ref;
   if (children.length === undefined) {
-    throw new Error("{'type':'error', 'code': 201, 'desc':'>1 Children Required','component': 'Vstack'}");
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", {
+      className: "vstack-main",
+      style: {
+        alignItems: control,
+        ...style
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", {
+      style: {
+        marginBlock: padding
+      }
+    }, children));
   } else {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", {
       className: "vstack-main",
@@ -205,7 +391,19 @@ const Hstack = _ref2 => {
     style
   } = _ref2;
   if (children.length === undefined) {
-    throw new Error("{'type':'error', 'code': 201, 'desc':'>1 Children Required', 'component': 'Hstack'}");
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", {
+      className: "hstack-main",
+      style: {
+        alignItems: control,
+        ...style
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", {
+      style: {
+        marginInline: padding,
+        alignItems: 'center',
+        display: 'flex'
+      }
+    }, children));
   } else {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", {
       className: "hstack-main",
@@ -216,7 +414,9 @@ const Hstack = _ref2 => {
     }, children.map((child, index) => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", {
       key: index,
       style: {
-        marginInline: padding
+        marginInline: padding,
+        alignItems: 'center',
+        display: 'flex'
       }
     }, child)));
   }
@@ -336,6 +536,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 
 
+
 const Image = _ref => {
   let {
     src,
@@ -345,7 +546,9 @@ const Image = _ref => {
     borderRad,
     className
   } = _ref;
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("img", {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(react__WEBPACK_IMPORTED_MODULE_1__.Suspense, {
+    fallback: "Loading..."
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("img", {
     className: className,
     src: src,
     alt: alt,
@@ -355,7 +558,7 @@ const Image = _ref => {
       borderRadius: borderRad,
       objectFit: 'cover'
     }
-  });
+  }));
 };
 
 
@@ -452,6 +655,33 @@ const Tag = _ref => {
 
 /***/ }),
 
+/***/ "./src/notion-components/Tooltips/Tooltips.jsx":
+/*!*****************************************************!*\
+  !*** ./src/notion-components/Tooltips/Tooltips.jsx ***!
+  \*****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ToolTip: () => (/* binding */ ToolTip)
+/* harmony export */ });
+/* harmony import */ var _Tooltips_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Tooltips.css */ "./src/notion-components/Tooltips/Tooltips.css");
+
+const ToolTip = _ref => {
+  let {
+    children,
+    label
+  } = _ref;
+  return /*#__PURE__*/React.createElement("div", {
+    className: "tooltip"
+  }, children, /*#__PURE__*/React.createElement("span", {
+    className: "tooltiptext"
+  }, label));
+};
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js!./src/notion-components/Buttons/Buttons.css":
 /*!*****************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./src/notion-components/Buttons/Buttons.css ***!
@@ -477,10 +707,15 @@ ___CSS_LOADER_EXPORT___.push([module.id, `button {
 
 .button-main {
   padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
+  border-radius: 0.35rem;
   white-space: nowrap;
   font-size: 1em;
   cursor: pointer;
+}
+
+.max-button-width {
+  width: 100%;
+  margin-inline: 1rem;
 }
 
 .button-grouper-main {
@@ -488,11 +723,11 @@ ___CSS_LOADER_EXPORT___.push([module.id, `button {
 }
 
 .button-grouper-cap-start {
-  border-radius: 0.5rem 0 0 0.5rem;
+  border-radius: 0.35rem 0 0 0.35rem;
 }
 
 .button-grouper-cap-end {
-  border-radius: 0 0.5rem 0.5rem 0;
+  border-radius: 0 0.35rem 0.35rem 0;
 }
 
 .button-grouper-inner {
@@ -594,6 +829,139 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.card-content-container {
   color: #333;
   margin-block: 0px;
   margin-left: 0.25rem;
+}
+`, ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./src/notion-components/Code/Code.css":
+/*!***********************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./src/notion-components/Code/Code.css ***!
+  \***********************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/noSourceMaps.js */ "./node_modules/css-loader/dist/runtime/noSourceMaps.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+// Imports
+
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, `.keyword-light {
+  color: #BE8991;
+  font-family: monospace;
+}
+
+.builtin-light {
+  color: #BADB54;
+  font-family: monospace;
+}
+
+.string-light {
+  color: #BADB54;
+  font-family: monospace;
+}
+
+.comment-light {
+  color: #8B765D;
+  font-family: monospace;
+}
+
+.tag-light {
+  color: #BADB54;
+  font-family: monospace;
+}
+
+.attribute-light {
+  color: #BADB54;
+  font-family: monospace;
+}
+
+.selector-light {
+  color: #BADB54;
+  font-family: monospace;
+}
+
+.property-light {
+  color: #BADB54;
+  font-family: monospace;
+}
+
+.value-light {
+  color: #98c379;
+  font-family: monospace;
+}
+
+.keyword-dark {
+  color: #0077AA;
+  font-family: monospace;
+}
+
+.builtin-dark {
+  color: #689B04;
+  font-family: monospace;
+}
+
+.string-dark {
+  color: #689B04;
+  font-family: monospace;
+}
+
+.comment-dark {
+  color: #708090;
+  font-family: monospace;
+}
+
+.tag-dark {
+  color: #689B04;
+  font-family: monospace;
+}
+
+.attribute-dark {
+  color: #689B04;
+  font-family: monospace;
+}
+
+.selector-dark {
+  color: #689B04;
+  font-family: monospace;
+}
+
+.property-dark {
+  color: #689B04;
+  font-family: monospace;
+}
+
+.value-dark {
+  color: #98c379;
+  font-family: monospace;
+}
+
+.code-container-light {
+  background-color: #F7F6F3;
+  color: #999999;
+  padding-inline: 1.5rem;
+  padding-block: 1rem;
+  border-radius: 1rem;
+  overflow-x: auto;
+}
+
+.code-container-dark {
+  background-color: #2C2C2C;
+  color: #999999;
+  padding-inline: 1.5rem;
+  padding-block: 1rem;
+  border-radius: 1rem;
+  overflow-x: auto;
 }
 `, ""]);
 // Exports
@@ -858,11 +1226,11 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.back-dark {
 }
 
 .constructive {
-  background-color: #00ff00;
+  background-color: #32D74B;
   color: #3d3d3d;
 }
 .constructive:hover {
-  background-color: #99ff99;
+  background-color: #6bd37a;
 }
 
 .sans {
@@ -1010,6 +1378,68 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.tag-main {
   margin-block: 0.5em;
   margin-inline: 0.8em;
   font-weight: 600;
+}
+`, ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./src/notion-components/Tooltips/Tooltips.css":
+/*!*******************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./src/notion-components/Tooltips/Tooltips.css ***!
+  \*******************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/noSourceMaps.js */ "./node_modules/css-loader/dist/runtime/noSourceMaps.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+// Imports
+
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, `.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+  border-radius: 50%;
+  margin-inline: 1rem;
+  text-align: center;
+}
+.tooltip .tooltiptext {
+  visibility: hidden;
+  white-space: nowrap;
+  background-color: #0F0F0F;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 0.3rem 0.5rem;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #0F0F0F transparent transparent transparent;
+}
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
 }
 `, ""]);
 // Exports
@@ -3996,6 +4426,58 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 /***/ }),
 
+/***/ "./src/notion-components/Code/Code.css":
+/*!*********************************************!*\
+  !*** ./src/notion-components/Code/Code.css ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/styleDomAPI.js */ "./node_modules/style-loader/dist/runtime/styleDomAPI.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/insertBySelector.js */ "./node_modules/style-loader/dist/runtime/insertBySelector.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js */ "./node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/insertStyleElement.js */ "./node_modules/style-loader/dist/runtime/insertStyleElement.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/styleTagTransform.js */ "./node_modules/style-loader/dist/runtime/styleTagTransform.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_Code_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! !!../../../node_modules/css-loader/dist/cjs.js!./Code.css */ "./node_modules/css-loader/dist/cjs.js!./src/notion-components/Code/Code.css");
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+var options = {};
+
+options.styleTagTransform = (_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default());
+options.setAttributes = (_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default());
+options.insert = _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default().bind(null, "head");
+options.domAPI = (_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default());
+options.insertStyleElement = (_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default());
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_Code_css__WEBPACK_IMPORTED_MODULE_6__["default"], options);
+
+
+
+
+       /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_Code_css__WEBPACK_IMPORTED_MODULE_6__["default"] && _node_modules_css_loader_dist_cjs_js_Code_css__WEBPACK_IMPORTED_MODULE_6__["default"].locals ? _node_modules_css_loader_dist_cjs_js_Code_css__WEBPACK_IMPORTED_MODULE_6__["default"].locals : undefined);
+
+
+/***/ }),
+
 /***/ "./src/notion-components/Containers/Containers.css":
 /*!*********************************************************!*\
   !*** ./src/notion-components/Containers/Containers.css ***!
@@ -4304,6 +4786,58 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 
        /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_Tag_css__WEBPACK_IMPORTED_MODULE_6__["default"] && _node_modules_css_loader_dist_cjs_js_Tag_css__WEBPACK_IMPORTED_MODULE_6__["default"].locals ? _node_modules_css_loader_dist_cjs_js_Tag_css__WEBPACK_IMPORTED_MODULE_6__["default"].locals : undefined);
+
+
+/***/ }),
+
+/***/ "./src/notion-components/Tooltips/Tooltips.css":
+/*!*****************************************************!*\
+  !*** ./src/notion-components/Tooltips/Tooltips.css ***!
+  \*****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/styleDomAPI.js */ "./node_modules/style-loader/dist/runtime/styleDomAPI.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/insertBySelector.js */ "./node_modules/style-loader/dist/runtime/insertBySelector.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js */ "./node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/insertStyleElement.js */ "./node_modules/style-loader/dist/runtime/insertStyleElement.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/styleTagTransform.js */ "./node_modules/style-loader/dist/runtime/styleTagTransform.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_Tooltips_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! !!../../../node_modules/css-loader/dist/cjs.js!./Tooltips.css */ "./node_modules/css-loader/dist/cjs.js!./src/notion-components/Tooltips/Tooltips.css");
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+var options = {};
+
+options.styleTagTransform = (_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default());
+options.setAttributes = (_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default());
+options.insert = _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default().bind(null, "head");
+options.domAPI = (_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default());
+options.insertStyleElement = (_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default());
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_Tooltips_css__WEBPACK_IMPORTED_MODULE_6__["default"], options);
+
+
+
+
+       /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_Tooltips_css__WEBPACK_IMPORTED_MODULE_6__["default"] && _node_modules_css_loader_dist_cjs_js_Tooltips_css__WEBPACK_IMPORTED_MODULE_6__["default"].locals ? _node_modules_css_loader_dist_cjs_js_Tooltips_css__WEBPACK_IMPORTED_MODULE_6__["default"].locals : undefined);
 
 
 /***/ }),
@@ -4669,6 +5203,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   Button: () => (/* reexport safe */ _notion_components_Buttons_Buttons__WEBPACK_IMPORTED_MODULE_0__.Button),
 /* harmony export */   ButtonGrouper: () => (/* reexport safe */ _notion_components_Buttons_Buttons__WEBPACK_IMPORTED_MODULE_0__.ButtonGrouper),
 /* harmony export */   Card: () => (/* reexport safe */ _notion_components_Card_Card__WEBPACK_IMPORTED_MODULE_7__.Card),
+/* harmony export */   Code: () => (/* reexport safe */ _notion_components_Code_Code__WEBPACK_IMPORTED_MODULE_8__.Code),
 /* harmony export */   Header1: () => (/* reexport safe */ _notion_components_Headers_Headers__WEBPACK_IMPORTED_MODULE_5__.Header1),
 /* harmony export */   Header2: () => (/* reexport safe */ _notion_components_Headers_Headers__WEBPACK_IMPORTED_MODULE_5__.Header2),
 /* harmony export */   Header3: () => (/* reexport safe */ _notion_components_Headers_Headers__WEBPACK_IMPORTED_MODULE_5__.Header3),
@@ -4680,7 +5215,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   Link: () => (/* reexport safe */ _notion_components_Link_Link__WEBPACK_IMPORTED_MODULE_1__.Link),
 /* harmony export */   Styles: () => (/* reexport module object */ _notion_components_Styles_Styles__WEBPACK_IMPORTED_MODULE_4__),
 /* harmony export */   Tag: () => (/* reexport safe */ _notion_components_Tag_Tag__WEBPACK_IMPORTED_MODULE_6__.Tag),
-/* harmony export */   Vstack: () => (/* reexport safe */ _notion_components_Containers_Containers__WEBPACK_IMPORTED_MODULE_3__.Vstack)
+/* harmony export */   ToolTip: () => (/* reexport safe */ _notion_components_Tooltips_Tooltips__WEBPACK_IMPORTED_MODULE_9__.ToolTip),
+/* harmony export */   Vstack: () => (/* reexport safe */ _notion_components_Containers_Containers__WEBPACK_IMPORTED_MODULE_3__.Vstack),
+/* harmony export */   WideButton: () => (/* reexport safe */ _notion_components_Buttons_Buttons__WEBPACK_IMPORTED_MODULE_0__.WideButton),
+/* harmony export */   WrappedCode: () => (/* reexport safe */ _notion_components_Code_Code__WEBPACK_IMPORTED_MODULE_8__.WrappedCode)
 /* harmony export */ });
 /* harmony import */ var _notion_components_Buttons_Buttons__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./notion-components/Buttons/Buttons */ "./src/notion-components/Buttons/Buttons.jsx");
 /* harmony import */ var _notion_components_Link_Link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./notion-components/Link/Link */ "./src/notion-components/Link/Link.jsx");
@@ -4690,7 +5228,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _notion_components_Headers_Headers__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./notion-components/Headers/Headers */ "./src/notion-components/Headers/Headers.jsx");
 /* harmony import */ var _notion_components_Tag_Tag__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./notion-components/Tag/Tag */ "./src/notion-components/Tag/Tag.jsx");
 /* harmony import */ var _notion_components_Card_Card__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./notion-components/Card/Card */ "./src/notion-components/Card/Card.jsx");
+/* harmony import */ var _notion_components_Code_Code__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./notion-components/Code/Code */ "./src/notion-components/Code/Code.jsx");
+/* harmony import */ var _notion_components_Tooltips_Tooltips__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./notion-components/Tooltips/Tooltips */ "./src/notion-components/Tooltips/Tooltips.jsx");
 // Import the components
+
+
 
 
 
