@@ -42,6 +42,10 @@ module.exports = {
         test: /\.png$/, // Add this rule to handle PNG files
         type: 'asset/resource', // Use asset/resource to emit the file as a separate asset
       },
+      {
+        test: /\.gif$/, // Add this rule to handle PNG files
+        type: 'asset/resource', // Use asset/resource to emit the file as a separate asset
+      }
       // Add other loaders as needed (e.g., images, fonts)
     ],
   },

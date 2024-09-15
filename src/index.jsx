@@ -52,7 +52,7 @@ def hello_world():
             `}
             </WrappedCode>
             <Spinner
-                mode="light"
+                mode="gitHubMona"
             />
         </Vstack>
 );
