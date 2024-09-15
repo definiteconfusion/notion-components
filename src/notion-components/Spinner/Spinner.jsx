@@ -6,11 +6,11 @@ import spinnerGitHubMona from './Spinner-Icon-GitHub-Mona.gif';
 const Spinner = ({ mode }) => {
     let modeColors = {
         light: {
-            "src": spinnerLight,
+            "src": spinnerDark,
             "class": "spinner"
         },
         dark: {
-            "src": spinnerDark,
+            "src": spinnerLight,
             "class": "spinner"
         },
         gitHubMona: {
