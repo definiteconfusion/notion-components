@@ -38,6 +38,10 @@ module.exports = {
         test: /\.css$/, // Add this rule to handle CSS files
         use: ['style-loader', 'css-loader'], // Use style-loader and css-loader
       },
+      {
+        test: /\.png$/, // Add this rule to handle PNG files
+        type: 'asset/resource', // Use asset/resource to emit the file as a separate asset
+      },
       // Add other loaders as needed (e.g., images, fonts)
     ],
   },
