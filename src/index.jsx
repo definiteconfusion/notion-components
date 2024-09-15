@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { Code, WrappedCode, Button, WideButton, ButtonGrouper, Hstack, Vstack, Image, Card, ToolTip } from './pack'
+import { Code, WrappedCode, Button, WideButton, ButtonGrouper, Hstack, Vstack, Image, Card, ToolTip, Spinner } from './pack'
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -13,7 +13,7 @@ root.render(
                 control="center"
                 padding="0.25rem"
             >
-                <Button mode="light" onClick={() => console.log("One")}>One</Button>
+                <Button mode="dark" onClick={() => console.log("One")}>One</Button>
                 <ButtonGrouper>
                     <Button mode="affirmative" onClick={() => console.log("Two")}>Two</Button>
                     <Button mode="constructive" onClick={() => console.log("Three")}>Three</Button>
@@ -39,7 +39,7 @@ root.render(
     mode="dark"
 >
     <Button mode="affirmative" onClick={() => console.log("Two")}>Add to Cart</Button>
-    <Button mode="light" onClick={() => console.log("Three")}>Details</Button>
+    <Button mode="dark" onClick={() => console.log("Three")}>Details</Button>
 </Card>
             <WrappedCode 
                 language="py"
@@ -51,5 +51,8 @@ def hello_world():
 }
             `}
             </WrappedCode>
+            <Spinner
+                mode="light"
+            />
         </Vstack>
 );
