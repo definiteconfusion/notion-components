@@ -1,4 +1,5 @@
 import './Tooltips.css'
+import React from 'react';
 
 const ToolTip = ({ children, label, mode="light" }) => {
     let modeSave = {

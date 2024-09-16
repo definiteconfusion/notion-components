@@ -2,6 +2,7 @@ import './Spinner.css';
 import spinnerLight from './Spinner-Icon-Light.png';
 import spinnerDark from './Spinner-Icon-Dark.png';
 import spinnerGitHubMona from './Spinner-Icon-GitHub-Mona.gif';
+import React from 'react';
 
 const Spinner = ({ mode }) => {
     let modeColors = {
