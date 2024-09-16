@@ -3,6 +3,10 @@ import ReactDOM from 'react-dom/client';
 import { Code, WrappedCode, Button, WideButton, ButtonGrouper, Hstack, Vstack, Image, Card, ToolTip, Spinner } from './pack'
 
 
+let CurrentMode = "light";
+
+
+let bodyColor = {"dark":"#1E1E1E","light":"#fff"}; let base = document.getElementById('root'); base.style = "background-color: " + bodyColor[CurrentMode] + "; color: " + bodyColor[CurrentMode] + ";display: flex; justify-content:center; align-items:center; min-height:100vH; transition-duration: 0.1s; font-family:ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI Variable Display', 'Segoe UI', Helvetica, 'Apple Color Emoji', Arial, sans-serif, 'Segoe UI Emoji', 'Segoe UI Symbol';"
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
         <Vstack
@@ -13,7 +17,7 @@ root.render(
                 control="center"
                 padding="0.25rem"
             >
-                <Button mode="dark" onClick={() => console.log("One")}>One</Button>
+                <Button mode={CurrentMode} onClick={() => console.log("One")}>One</Button>
                 <ButtonGrouper>
                     <Button mode="affirmative" onClick={() => console.log("Two")}>Two</Button>
                     <Button mode="constructive" onClick={() => console.log("Three")}>Three</Button>
@@ -22,6 +26,7 @@ root.render(
                 </ButtonGrouper>
                     <ToolTip
                         label="Sign-in"
+                        mode={CurrentMode}
                     >
                         <WideButton
                             edging="2rem"
@@ -36,14 +41,14 @@ root.render(
     price="10"
     currency="£"
     unit="per kilo"
-    mode="dark"
+    mode={CurrentMode}
 >
     <Button mode="affirmative" onClick={() => console.log("Two")}>Add to Cart</Button>
     <Button mode="dark" onClick={() => console.log("Three")}>Details</Button>
 </Card>
             <WrappedCode 
                 language="py"
-                mode="dark"
+                mode={CurrentMode}
             >
             {`# Hello World
 def hello_world():
@@ -52,7 +57,7 @@ def hello_world():
             `}
             </WrappedCode>
             <Spinner
-                mode="gitHubMona"
+                mode={CurrentMode}
             />
         </Vstack>
 );
