@@ -1,11 +1,11 @@
-.table-main {
+.table-main-dark {
   border-color: #2F2F2F;
   border-width: 1px;
   border-style: solid;
   border-collapse: collapse;
 }
 
-.table-item {
+.table-item-dark {
   font-size: 0.9rem;
   color: #D4D4D4;
   padding-left: 0.6rem;
@@ -13,8 +13,27 @@
   padding-block: 0.45rem;
 }
 
-.table-main td, .table-main th {
+.table-main-dark td, .table-main-dark th {
   border: 1px solid #2F2F2F;
+}
+
+.table-main-light {
+  border-color: #E9E9E7;
+  border-width: 1px;
+  border-style: solid;
+  border-collapse: collapse;
+}
+
+.table-item-light {
+  font-size: 0.9rem;
+  color: #000;
+  padding-left: 0.6rem;
+  padding-right: 5rem;
+  padding-block: 0.45rem;
+}
+
+.table-main-light td, .table-main-light th {
+  border: 1px solid #E9E9E7;
 }
 
 /*# sourceMappingURL=Table.css.map */

@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { Table, Code, WrappedCode, Button, WideButton, ButtonGrouper, Hstack, Vstack, Image, Card, ToolTip, Spinner } from './pack'
 
 
-let CurrentMode = "dark";
+let CurrentMode = "light";
 
 
 let bodyColor = {"dark":"#1E1E1E","light":"#fff"}; let base = document.getElementById('root'); base.style = "background-color: " + bodyColor[CurrentMode] + "; color: " + bodyColor[CurrentMode] + ";display: flex; justify-content:center; align-items:center; min-height:100vH; transition-duration: 0.1s; font-family:ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI Variable Display', 'Segoe UI', Helvetica, 'Apple Color Emoji', Arial, sans-serif, 'Segoe UI Emoji', 'Segoe UI Symbol';"
@@ -61,6 +61,9 @@ def hello_world():
             <Spinner
                 mode={CurrentMode}
             />
-            <Table data={[{ id: 1, name: 'John Doe', age: 28, occupation: 'Engineer' },{ id: 2, name: 'Jane Smith', age: 34, occupation: 'Designer' },{ id: 3, name: 'Sam Brown', age: 23, occupation: 'Developer' },]} />
+            <Table 
+                data={[{ id: 1, name: 'John Doe', age: 28, occupation: 'Engineer' },{ id: 2, name: 'Jane Smith', age: 34, occupation: 'Designer' },{ id: 3, name: 'Sam Brown', age: 23, occupation: 'Developer' },]}
+                mode={CurrentMode}
+                />
         </Vstack>
 );
