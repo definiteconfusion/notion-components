@@ -10,6 +10,7 @@ import { Card } from './notion-components/Card/Card';
 import { Code, WrappedCode } from './notion-components/Code/Code';
 import { ToolTip } from './notion-components/Tooltips/Tooltips';
 import { Spinner } from './notion-components/Spinner/Spinner';
+import { Table } from './notion-components/Table/Table';
 
 // Export the components
 export {
@@ -32,5 +33,6 @@ export {
   Code,
   WrappedCode,
   ToolTip,
-  Spinner
+  Spinner,
+  Table
 };
