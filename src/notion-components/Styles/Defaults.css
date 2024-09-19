@@ -1,0 +1,11 @@
+h1 h2 h3 h4 h5 h6 p {
+  font-family: sans-serif;
+}
+
+pre code span {
+  background-color: #FFFFFF;
+  color: #202020;
+  font-family: monospace;
+}
+
+/*# sourceMappingURL=Defaults.css.map */

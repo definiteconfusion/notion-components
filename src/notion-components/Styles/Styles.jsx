@@ -1,4 +1,5 @@
 import "./Styles.css"
+import "./Defaults.css"
 import React from 'react';
 
 // Placeholder export for CSS styles

@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { Fallback, Table, Code, WrappedCode, Button, WideButton, ButtonGrouper, Hstack, Vstack, Image, Card, ToolTip, Spinner } from './pack'
+import { Fallback, Table, Code, WrappedCode, Button, WideButton, ButtonGrouper, Hstack, Vstack, Image, Card, ToolTip, div } from './pack'
 
 
 let CurrentMode = "dark";
@@ -75,7 +75,7 @@ export default function App() {
 }
             `}
             </WrappedCode>
-            <Spinner
+            <div
                 mode={CurrentMode}
             />
             <Table 
