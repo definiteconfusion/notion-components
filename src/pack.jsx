@@ -33,6 +33,6 @@ export {
   Code,
   WrappedCode,
   ToolTip,
-  Spinner,
+  // Spinner, // To Fix a bug with image webpacking
   Table
 };
