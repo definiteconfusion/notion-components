@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { Table, Code, WrappedCode, Button, WideButton, ButtonGrouper, Hstack, Vstack, Image, Card, ToolTip, Spinner } from './pack'
+import { Fallback, Table, Code, WrappedCode, Button, WideButton, ButtonGrouper, Hstack, Vstack, Image, Card, ToolTip, Spinner } from './pack'
 
 
 let CurrentMode = "dark";
@@ -38,7 +38,7 @@ root.render(
                     </ToolTip>
             </Hstack>
             <Card
-    icon="https://via.placeholder.com/500"
+    icon="https://via.placeholder.com/2000"
     title="Title"
     price="10"
     currency="£"

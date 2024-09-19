@@ -11,6 +11,7 @@ import { Code, WrappedCode } from './notion-components/Code/Code';
 import { ToolTip } from './notion-components/Tooltips/Tooltips';
 import { Spinner } from './notion-components/Spinner/Spinner';
 import { Table } from './notion-components/Table/Table';
+import { Fallback } from './notion-components/Fallback/Fallback';
 
 // Export the components
 export {
@@ -34,5 +35,6 @@ export {
   WrappedCode,
   ToolTip,
   // Spinner, // To Fix a bug with image webpacking
-  Table
+  Table,
+  Fallback
 };
