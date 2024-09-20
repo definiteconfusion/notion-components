@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from 'react';
 import './Code.css';
-
 const keyWords = {
   py: {
     keywords: [
@@ -136,17 +135,17 @@ const Code = ({ children, language, mode }) => {
 
   useEffect(() => {
     if (codeRef.current) {
-      codeRef.current.innerHTML = highlightSyntax(children, language);
+      codeRef.current.innerHTML = highlightSyntax(children, language, mode);
     }
-  }, [children, language]);
+  }, [children, language, mode]);
 
-  return <pre ref={codeRef} className={`language-${language}`} />;
+  return <pre ref={codeRef} className={`${language}-${mode}`} />;
 };
 
 const WrappedCode = ({ children, language, mode }) => {
   return (
     <div className={`code-container-${mode}`}>
-      <Code language={language}>{children}</Code>
+      <Code language={language} mode={mode}>{children}</Code>
     </div>
   );
 };

@@ -12,6 +12,7 @@ import { ToolTip } from './notion-components/Tooltips/Tooltips';
 import { Spinner } from './notion-components/Spinner/Spinner';
 import { Table } from './notion-components/Table/Table';
 import { Fallback } from './notion-components/Fallback/Fallback';
+import { Toggle } from './notion-components/Toggle/Toggle';
 
 // Export the components
 export {
@@ -36,5 +37,6 @@ export {
   ToolTip,
   // Spinner, // To Fix a bug with image webpacking
   Table,
-  Fallback
+  Fallback,
+  Toggle
 };

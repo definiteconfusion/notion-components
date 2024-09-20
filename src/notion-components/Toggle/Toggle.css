@@ -1,0 +1,50 @@
+.toggle-main {
+  width: 2.5rem;
+  height: 1.5rem;
+  border-radius: 5rem;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.toggle-main-on-light {
+  background-color: #2383E2;
+}
+
+.toggle-main-off-light {
+  background-color: #DBDAD6;
+}
+
+.toggle-main-on-dark {
+  background-color: #2383E2;
+}
+
+.toggle-main-off-dark {
+  background-color: #5C5D5D;
+}
+
+.toggle-knob-off {
+  background-color: #FFFFFF;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 0.15rem;
+  transform: translateY(-50%);
+  transition: left 0.3s;
+}
+
+.toggle-knob-on {
+  background-color: #FFFFFF;
+  width: 1.3rem;
+  height: 1.3rem;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 1.025rem;
+  transform: translateY(-50%);
+  transition: left 0.3s;
+}
+
+/*# sourceMappingURL=Toggle.css.map */

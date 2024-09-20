@@ -8,7 +8,9 @@
         "**/.rmv/config/*.json": "jsonc"
     },
     "files.exclude": {
-        "**/.git": true,
+        "**/.git": false,
+        "**/.venv": true,
+        "**/.idea": true,
         "**/.svn": true,
         "**/.hg": true,
         "**/CVS": true,

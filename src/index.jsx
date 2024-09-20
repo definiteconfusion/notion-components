@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { Fallback, Table, Code, WrappedCode, Button, WideButton, ButtonGrouper, Hstack, Vstack, Image, Card, ToolTip, div } from './pack'
+import { Toggle, Fallback, Table, Code, WrappedCode, Button, WideButton, ButtonGrouper, Hstack, Vstack, Image, Card, ToolTip, div } from './pack'
 
 
 let CurrentMode = "dark";
@@ -15,6 +15,15 @@ root.render(
             control="start"
             padding="1rem"
         >
+            <ToolTip
+                        label="Toggle"
+                        mode={CurrentMode}
+                    >
+                <Toggle
+                    onChange={(checked) => console.log(checked)}
+                    mode={CurrentMode}
+                />
+            </ToolTip>
             <Hstack
                 control="center"
                 padding="0.25rem"
@@ -38,7 +47,7 @@ root.render(
                     </ToolTip>
             </Hstack>
             <Card
-    icon="https://via.placeholder.com/2000"
+    icon="https://via.placeholder.com/500"
     title="Title"
     price="10"
     currency="£"
