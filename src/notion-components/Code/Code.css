@@ -1,40 +1,40 @@
 .keyword-light {
-  color: #BE8991;
+  color: #0077AA;
   font-family: monospace;
 }
 
 .builtin-light {
-  color: #BADB54;
+  color: #689B04;
   font-family: monospace;
 }
 
 .string-light {
-  color: #BADB54;
+  color: #689B04;
   font-family: monospace;
 }
 
 .comment-light {
-  color: #8B765D;
+  color: #708090;
   font-family: monospace;
 }
 
 .tag-light {
-  color: #BADB54;
+  color: #689B04;
   font-family: monospace;
 }
 
 .attribute-light {
-  color: #BADB54;
+  color: #689B04;
   font-family: monospace;
 }
 
 .selector-light {
-  color: #BADB54;
+  color: #689B04;
   font-family: monospace;
 }
 
 .property-light {
-  color: #BADB54;
+  color: #689B04;
   font-family: monospace;
 }
 
@@ -44,42 +44,42 @@
 }
 
 .keyword-dark {
-  color: #0077AA;
+  color: #BE8991;
   font-family: monospace;
 }
 
 .builtin-dark {
-  color: #689B04;
+  color: #BADB54;
   font-family: monospace;
 }
 
 .string-dark {
-  color: #689B04;
+  color: #BADB54;
   font-family: monospace;
 }
 
 .comment-dark {
-  color: #708090;
+  color: #8B765D;
   font-family: monospace;
 }
 
 .tag-dark {
-  color: #689B04;
+  color: #BADB54;
   font-family: monospace;
 }
 
 .attribute-dark {
-  color: #689B04;
+  color: #BADB54;
   font-family: monospace;
 }
 
 .selector-dark {
-  color: #689B04;
+  color: #BADB54;
   font-family: monospace;
 }
 
 .property-dark {
-  color: #689B04;
+  color: #BADB54;
   font-family: monospace;
 }
 
