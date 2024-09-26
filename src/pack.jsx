@@ -1,5 +1,5 @@
 // Import the components
-import { Button, WideButton, ButtonGrouper } from './notion-components/Buttons/Buttons';
+import { Button, WideButton, IconButton, ButtonGrouper } from './notion-components/Buttons/Buttons';
 import { Link } from './notion-components/Link/Link';
 import { Image } from './notion-components/Image/Image';
 import { Vstack, Hstack } from './notion-components/Containers/Containers';
@@ -13,6 +13,7 @@ import { Spinner } from './notion-components/Spinner/Spinner';
 import { Table } from './notion-components/Table/Table';
 import { Fallback } from './notion-components/Fallback/Fallback';
 import { Toggle } from './notion-components/Toggle/Toggle';
+import { Icon } from './notion-components/Icon/Icon';
 
 // Export the components
 export {
@@ -38,5 +39,7 @@ export {
   // Spinner, // To Fix a bug with image webpacking
   Table,
   Fallback,
-  Toggle
+  Toggle,
+  IconButton,
+  Icon
 };

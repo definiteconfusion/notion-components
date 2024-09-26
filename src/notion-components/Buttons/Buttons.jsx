@@ -1,6 +1,7 @@
 import './Buttons.css';
 import { Hstack } from '../Containers/Containers';
 import React from 'react';
+import { Icon } from '../Icon/Icon';
 
 
 const Button = ({ children, mode, onClick, className, style }) => {
@@ -15,6 +16,20 @@ const WideButton = ({ children, mode, onClick, className, style, edging }) => {
     return (
         <button className={`button-main max-button-width ${mode} ${className}`} onClick={onClick} style={{marginInline: edging, ...style}} >
             {children}
+        </button>
+    );
+}
+
+const IconButton = ({ name, mode, onClick, className, style }) => {
+    let modes = {
+
+    }
+    return (
+        <button className={`icon-button-main-${mode} ${className}`} onClick={onClick} style={style} >
+            <Icon
+                name={name}
+                style={style}
+            />
         </button>
     );
 }
@@ -48,4 +63,4 @@ const ButtonGrouper = ({ children, padding = '0px', className, style }) => {
     );
 }
 
-export { Button, WideButton, ButtonGrouper };
+export { Button, WideButton, IconButton, ButtonGrouper };

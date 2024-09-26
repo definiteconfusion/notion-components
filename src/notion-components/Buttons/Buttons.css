@@ -31,4 +31,32 @@ button {
   border-radius: 0;
 }
 
+.icon-button-main-light {
+  aspect-ratio: 1;
+  padding: 0.4rem 0.4rem;
+  border-radius: 0.35rem;
+  white-space: nowrap;
+  font-size: 1em;
+  cursor: pointer;
+  background-color: white;
+  color: #C1C0BF;
+}
+.icon-button-main-light:hover {
+  background-color: #F3F3F3;
+}
+
+.icon-button-main-dark {
+  aspect-ratio: 1;
+  padding: 0.4rem 0.4rem;
+  border-radius: 0.35rem;
+  white-space: nowrap;
+  font-size: 1em;
+  cursor: pointer;
+  background-color: #202020;
+  color: #9B9B9B;
+}
+.icon-button-main-dark:hover {
+  background-color: #2C2C2C;
+}
+
 /*# sourceMappingURL=Buttons.css.map */

@@ -39,18 +39,17 @@ module.exports = {
         use: ['style-loader', 'css-loader'], // Use style-loader and css-loader
       },
       {
-        test: /\.png$/, // Add this rule to handle PNG files
+        test: /\.(png|gif|jpe?g)$/i, // Add this rule to handle image files
         type: 'asset/resource', // Use asset/resource to emit the file as a separate asset
       },
       {
-        test: /\.gif$/, // Add this rule to handle PNG files
-        type: 'asset/resource', // Use asset/resource to emit the file as a separate asset
+        test: /\.svg$/,
+        use: ['@svgr/webpack'],
       }
-      // Add other loaders as needed (e.g., images, fonts)
-    ],
-  },
+        ],
+      },
 
-  plugins: [
+      plugins: [
     // Add plugins as needed (e.g., HTMLWebpackPlugin)
     process.env.NODE_ENV === 'development' && new ReactRefreshWebpackPlugin(),
   ].filter(Boolean), // Filter out falsy values to conditionally include the plugin

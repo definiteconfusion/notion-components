@@ -2,6 +2,7 @@ import './Spinner.css';
 import spinnerLight from './Spinner-Icon-Light.png';
 import spinnerDark from './Spinner-Icon-Dark.png';
 import spinnerGitHubMona from './Spinner-Icon-GitHub-Mona.gif';
+import notionAi from './Spinner-Icon-NotionAI.gif';
 import React from 'react';
 
 const Spinner = ({ mode }) => {
@@ -16,6 +17,10 @@ const Spinner = ({ mode }) => {
         },
         gitHubMona: {
             "src": spinnerGitHubMona,
+            "class": "spinner-github-mona"
+        },
+        notionAi: {
+            "src": notionAi,
             "class": "spinner-github-mona"
         }
     };

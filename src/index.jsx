@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { Toggle, Fallback, Table, Code, WrappedCode, Button, WideButton, ButtonGrouper, Hstack, Vstack, Image, Card, ToolTip, div } from './pack'
+import { Icon, IconButton, Toggle, Fallback, Table, Code, WrappedCode, Button, WideButton, ButtonGrouper, Hstack, Vstack, Image, Card, ToolTip, div } from './pack'
 
 
-let CurrentMode = "dark";
+let CurrentMode = "light";
 
 
 let bodyColor = {"dark":"#1E1E1E","light":"#fff"}; let base = document.getElementById('root'); base.style = "background-color: " + bodyColor[CurrentMode] + "; color: " + bodyColor[CurrentMode] + ";display: flex; justify-content:center; align-items:center; min-height:100vH; transition-duration: 0.1s; font-family:ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI Variable Display', 'Segoe UI', Helvetica, 'Apple Color Emoji', Arial, sans-serif, 'Segoe UI Emoji', 'Segoe UI Symbol'; padding: 5rem;";
@@ -15,6 +15,25 @@ root.render(
             control="start"
             padding="1rem"
         >
+            <Hstack
+                padding="0.25rem"
+            >
+                <ToolTip
+                        label="Adjustments"
+                        mode={CurrentMode}
+                    >
+                    <IconButton
+                        name="adjustments-horizontal"
+                        mode={CurrentMode}
+                        onClick={() => console.log("Adjustments")}
+                    />
+                </ToolTip>
+                <IconButton
+                    name="ambulance"
+                    mode={CurrentMode}
+                    onClick={() => console.log("Ambulance")}
+                />
+            </Hstack>
             <ToolTip
                         label="Toggle"
                         mode={CurrentMode}
@@ -41,6 +60,7 @@ root.render(
                     >
                         <WideButton
                             edging="2rem"
+                            mode={CurrentMode}
                         >
                             Sign-in
                         </WideButton>

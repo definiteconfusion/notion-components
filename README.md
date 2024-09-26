@@ -1,7 +1,7 @@
 # Notion Components 📇
 
 ### **[README](https://jakerase.notion.site/Notion-Components-eacec70711124f5ebe63470a61cbfbfe) is Migrating to Notion!!!!**
-
+___
 ![!image](./Github%20Social%20Banner.png)
 
 ## **NOTICE** 😊
@@ -14,7 +14,7 @@ This project falls under the Creative Commons 4.0 Attribute Licence as outlined 
 
 ## Class System
 
-This project uses a class-based object modification system... so basically discount tailwind. You can view each of the modification classes in the [Styles.sass](./src/notion-components/Styles/Styles.sass) file, the first real modification class is on line **52**. For a full breakdown go to the [styles-readme](./src/notion-components/Styles/styles-readme.md) in the same directory!
+This project uses a class-based object modification system... so basically discount tailwind. You can view each of the modification classes in the [Styles.sass](./src/notion-components/Styles/Styles.sass) file, the first real modification class is on line **52**. For a full breakdown go to the [documentation](https://www.notion.so/jakerase/Styles-f66c4b3fb77842b891391558f538a4cf?pvs=4) on the website.
 
 ## Current Contributors
 
