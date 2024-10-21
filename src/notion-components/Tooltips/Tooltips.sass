@@ -8,16 +8,15 @@
   .tooltiptext
     visibility: hidden
     white-space: nowrap
-    // background-color: #0F0F0F
-    // color: #fff
     text-align: center
     border-radius: 6px
     padding: 0.3rem 0.5rem
     position: absolute
     z-index: 1
     bottom: 125%
+    left: 50%
+    transform: translateX(-50%)
     opacity: 0
-    transition: opacity 0.5s, visibility 0s linear 0.5s /* Added transition-delay */
 
     &::after
       content: ""
@@ -32,4 +31,4 @@
   &:hover .tooltiptext
     visibility: visible
     opacity: 1
-    transition-delay: 1s /* Reset transition-delay on hover */
+    transition-delay: 1s 

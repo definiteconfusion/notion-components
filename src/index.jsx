@@ -6,7 +6,7 @@ import { Icon, IconButton, Toggle, Fallback, Table, Code, WrappedCode, Button, W
 let CurrentMode = "light";
 
 
-let bodyColor = {"dark":"#1E1E1E","light":"#fff"}; let base = document.getElementById('root'); base.style = "background-color: " + bodyColor[CurrentMode] + "; color: " + bodyColor[CurrentMode] + ";display: flex; justify-content:center; align-items:center; min-height:100vH; transition-duration: 0.1s; font-family:ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI Variable Display', 'Segoe UI', Helvetica, 'Apple Color Emoji', Arial, sans-serif, 'Segoe UI Emoji', 'Segoe UI Symbol'; padding: 5rem;";
+let bodyColor = {"dark":"#202020","light":"#fff"}; let base = document.getElementById('root'); base.style = "background-color: " + bodyColor[CurrentMode] + "; color: " + bodyColor[CurrentMode] + ";display: flex; justify-content:center; align-items:center; min-height:100vH; transition-duration: 0.1s; font-family:ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI Variable Display', 'Segoe UI', Helvetica, 'Apple Color Emoji', Arial, sans-serif, 'Segoe UI Emoji', 'Segoe UI Symbol'; padding: 5rem;";
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 
@@ -75,7 +75,7 @@ root.render(
     mode={CurrentMode}
 >
     <Button mode="affirmative" onClick={() => console.log("Two")}>Add to Cart</Button>
-    <Button mode="dark" onClick={() => console.log("Three")}>Details</Button>
+    <Button mode={CurrentMode} onClick={() => console.log("Three")}>Details</Button>
 </Card>
             <WrappedCode 
                 language="js"

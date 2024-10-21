@@ -1,7 +1,7 @@
 import './Tooltips.css'
 import React from 'react';
 
-const ToolTip = ({ children, label, mode="light" }) => {
+const ToolTip = ({ children, label, mode="light", delay='0.5' }) => {
     let modeSave = {
         "dark": {
             "backgroundColor": "#fff",
@@ -16,7 +16,7 @@ const ToolTip = ({ children, label, mode="light" }) => {
     return (
         <div className="tooltip">
             {children}
-            <span className="tooltiptext" style={{ backgroundColor: modeSave[mode].backgroundColor, color: modeSave[mode].color }}>{label}</span>
+            <span className="tooltiptext" style={{ backgroundColor: modeSave[mode].backgroundColor, color: modeSave[mode].color, transition: `opacity ${delay}s, visibility 0s linear ${delay}s` }}>{label}</span>
         </div>
     );
 }
