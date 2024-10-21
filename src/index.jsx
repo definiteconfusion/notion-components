@@ -1,94 +1,69 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom/client';
-import { Icon, IconButton, Toggle, Fallback, Table, Code, WrappedCode, Button, WideButton, ButtonGrouper, Hstack, Vstack, Image, Card, ToolTip, div } from './pack'
+import { Icon, IconButton, Toggle, Fallback, Table, Code, WrappedCode, Button, WideButton, ButtonGrouper, Hstack, Vstack, Image, Card, ToolTip, div } from './pack';
 
+const App = () => {
+    const [currentMode, setCurrentMode] = useState("light");
 
-let CurrentMode = "light";
+    const bodyColor = { "dark": "#202020", "light": "#fff" };
+    const base = document.getElementById('root');
+    base.style = `background-color: ${bodyColor[currentMode]}; color: ${bodyColor[currentMode]}; display: flex; justify-content:center; align-items:center; min-height:100vH; transition-duration: 0.1s; font-family:ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI Variable Display', 'Segoe UI', Helvetica, 'Apple Color Emoji', Arial, sans-serif, 'Segoe UI Emoji', 'Segoe UI Symbol'; padding: 5rem;`;
 
+    const toggleMode = () => {
+        const newMode = currentMode === "light" ? "dark" : "light";
+        setCurrentMode(newMode);
+        base.style = `background-color: ${bodyColor[newMode]}; color: ${bodyColor[newMode]}; display: flex; justify-content:center; align-items:center; min-height:100vH; transition-duration: 0.1s; font-family:ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI Variable Display', 'Segoe UI', Helvetica, 'Apple Color Emoji', Arial, sans-serif, 'Segoe UI Emoji', 'Segoe UI Symbol'; padding: 5rem;`;
+    };
 
-let bodyColor = {"dark":"#202020","light":"#fff"}; let base = document.getElementById('root'); base.style = "background-color: " + bodyColor[CurrentMode] + "; color: " + bodyColor[CurrentMode] + ";display: flex; justify-content:center; align-items:center; min-height:100vH; transition-duration: 0.1s; font-family:ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI Variable Display', 'Segoe UI', Helvetica, 'Apple Color Emoji', Arial, sans-serif, 'Segoe UI Emoji', 'Segoe UI Symbol'; padding: 5rem;";
-const root = ReactDOM.createRoot(document.getElementById('root'));
-
-
-root.render(
-        <Vstack
-            control="start"
-            padding="1rem"
-        >
-            <Hstack
-                padding="0.25rem"
-            >
-                <ToolTip
-                        label="Adjustments"
-                        mode={CurrentMode}
-                    >
-                    <IconButton
-                        name="adjustments-horizontal"
-                        mode={CurrentMode}
-                        onClick={() => console.log("Adjustments")}
-                    />
-                </ToolTip>
-                <IconButton
-                    name="ambulance"
-                    mode={CurrentMode}
-                    onClick={() => console.log("Ambulance")}
-                />
-            </Hstack>
-            <ToolTip
-                        label="Toggle"
-                        mode={CurrentMode}
-                    >
+    return (
+        <Vstack control="start" padding="1rem">
+            <ToolTip label="Theme" mode={currentMode}>
                 <Toggle
-                    onChange={(checked) => console.log(checked)}
-                    mode={CurrentMode}
+                    onChange={(checked) => {
+                        console.log(checked);
+                        toggleMode();
+                    }}
+                    mode={currentMode}
                 />
             </ToolTip>
-            <Hstack
-                control="center"
-                padding="0.25rem"
-            >
-                <Button mode={CurrentMode} onClick={() => console.log("One")}>One</Button>
+            <Hstack padding="0.25rem">
+                <ToolTip label="Adjustments" mode={currentMode}>
+                    <IconButton name="adjustments-horizontal" mode={currentMode} onClick={() => console.log("Adjustments")} />
+                </ToolTip>
+                <IconButton name="ambulance" mode={currentMode} onClick={() => console.log("Ambulance")} />
+            </Hstack>
+            <Hstack control="center" padding="0.25rem">
+                <Button mode={currentMode} onClick={() => console.log("One")}>One</Button>
                 <ButtonGrouper>
                     <Button mode="affirmative" onClick={() => console.log("Two")}>Two</Button>
                     <Button mode="constructive" onClick={() => console.log("Three")}>Three</Button>
                     <Button mode="destructive" onClick={() => console.log("Four")}>Four</Button>
                     <Button mode="midnight" onClick={() => console.log("Five")}>Five</Button>
                 </ButtonGrouper>
-                    <ToolTip
-                        label="Sign-in"
-                        mode={CurrentMode}
-                    >
-                        <WideButton
-                            edging="2rem"
-                            mode={CurrentMode}
-                        >
-                            Sign-in
-                        </WideButton>
-                    </ToolTip>
+                <ToolTip label="Sign-in" mode={currentMode}>
+                    <WideButton edging="2rem" mode={currentMode}>
+                        Sign-in
+                    </WideButton>
+                </ToolTip>
             </Hstack>
             <Card
-    icon="https://via.placeholder.com/500"
-    title="Title"
-    price="10"
-    currency="£"
-    unit="per kilo"
-    mode={CurrentMode}
->
-    <Button mode="affirmative" onClick={() => console.log("Two")}>Add to Cart</Button>
-    <Button mode={CurrentMode} onClick={() => console.log("Three")}>Details</Button>
-</Card>
-            <WrappedCode 
-                language="js"
-                mode={CurrentMode}
+                icon="https://via.placeholder.com/500"
+                title="Title"
+                price="10"
+                currency="£"
+                unit="per kilo"
+                mode={currentMode}
             >
-            {`import { Card, Button, Header1 } from 'notion-components-react';
+                <Button mode="affirmative" onClick={() => console.log("Two")}>Add to Cart</Button>
+                <Button mode={currentMode} onClick={() => console.log("Three")}>Details</Button>
+            </Card>
+            <WrappedCode language="js" mode={currentMode}>
+                {`import { Card, Button, Header1 } from 'notion-components-react';
 
 export default function App() {
     return (
         <>
-            <Header1
-                mode="midnight mono black"
-            >Welcome to Notion Components</Header1>
+            <Header1 mode="midnight mono black">Welcome to Notion Components</Header1>
             <Card
                 icon="https://via.placeholder.com/500"
                 title="Title"
@@ -102,14 +77,20 @@ export default function App() {
         </>
     );
 }
-            `}
+                `}
             </WrappedCode>
-            <div
-                mode={CurrentMode}
+            <div mode={currentMode} />
+            <Table
+                data={[
+                    { id: 1, name: 'John Doe', age: 28, occupation: 'Engineer' },
+                    { id: 2, name: 'Jane Smith', age: 34, occupation: 'Designer' },
+                    { id: 3, name: 'Sam Brown', age: 23, occupation: 'Developer' },
+                ]}
+                mode={currentMode}
             />
-            <Table 
-                data={[{ id: 1, name: 'John Doe', age: 28, occupation: 'Engineer' },{ id: 2, name: 'Jane Smith', age: 34, occupation: 'Designer' },{ id: 3, name: 'Sam Brown', age: 23, occupation: 'Developer' },]}
-                mode={CurrentMode}
-                />
         </Vstack>
-);
+    );
+};
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);

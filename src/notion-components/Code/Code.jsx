@@ -6,7 +6,7 @@ const keyWords = {
       'def', 'if', 'elif', 'else', 'for', 'while', 'return', 'import', 'from', 'as', 'in', 'True', 'False', 'None', 'and', 'or', 'not', 'break', 'continue', 'pass', 'class', 'is', 'lambda', 'try', 'except', 'finally', 'raise', 'assert', 'with', 'yield', 'global', 'nonlocal',
     ],
     builtins: [
-      'print', 'len', 'range', 'str', 'int', 'float', 'list', 'dict', 'set', 'tuple', 'type', 'help',
+      'print', 'len', 'range', 'str', 'int', 'float', 'list', 'dict', 'set', 'tuple', 'type', 'help'
     ],
     strings: /(".*?"|'.*?')/g,
     comments: /#.*$/gm,
@@ -82,7 +82,7 @@ function highlightSyntax(codeContent, language, mode) {
   }
 
   // Highlight comments
-  if (comments) {
+  if (comments && !strings) {
     codeContent = codeContent.replace(comments, `<span class="${modeClassing('comment')}">$&</span>`);
   }
 
@@ -115,7 +115,7 @@ function highlightSyntax(codeContent, language, mode) {
   if (builtins) {
     builtins.forEach((builtin) => {
       const regex = new RegExp(`(?<!<[^>]*)\\b${builtin}\\b(?![^<]*>)`, 'g');
-      codeContent = codeContent.replace(regex, `<span class="builtin">${builtin}</span>`);
+      codeContent = codeContent.replace(regex, `<span class="${modeClassing('builtin')}">${builtin}</span>`);
     });
   }
 
