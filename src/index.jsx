@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom/client';
-import { Icon, IconButton, Toggle, Fallback, Table, Code, WrappedCode, Button, WideButton, ButtonGrouper, Hstack, Vstack, Image, Card, ToolTip, div } from './pack';
+import { Icon, Tag, IconButton, Toggle, Fallback, Table, Code, WrappedCode, Button, WideButton, ButtonGrouper, Hstack, Vstack, Image, Card, ToolTip, div } from './pack';
 
 const App = () => {
     const [currentMode, setCurrentMode] = useState("light");
@@ -53,6 +53,7 @@ const App = () => {
                 currency="£"
                 unit="per kilo"
                 mode={currentMode}
+                tags={<Tag mode="affirmative" title="New" />}
             >
                 <Button mode="affirmative" onClick={() => console.log("Two")}>Add to Cart</Button>
                 <Button mode={currentMode} onClick={() => console.log("Three")}>Details</Button>

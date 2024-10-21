@@ -51,7 +51,7 @@
     "webpack-cli": "^5.1.4"
   },
   "scripts": {
-    "build": "npx webpack --config webpack.config.js",
+    "build": "bash compile.sh",
     "start": "react-scripts start"
   },
   "browserslist": {
