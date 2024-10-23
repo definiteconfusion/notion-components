@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom/client';
-import { InlineCode, Icon, Tag, IconButton, Toggle, Fallback, Table, Code, WrappedCode, Button, WideButton, ButtonGrouper, Hstack, Vstack, Image, Card, ToolTip, div } from './pack';
+import { Spinner, InlineCode, Icon, Tag, IconButton, Toggle, Fallback, Table, Code, WrappedCode, Button, WideButton, ButtonGrouper, Hstack, Vstack, Image, Card, ToolTip, div } from './pack';
 
 const App = () => {
     const [currentMode, setCurrentMode] = useState("light");
-
+    const toggleLabel = currentMode === "light" ? "Dark" : "Light";
     const bodyColor = { "dark": "#202020", "light": "#fff" };
     const base = document.getElementById('root');
     base.style = `background-color: ${bodyColor[currentMode]}; color: ${bodyColor[currentMode]}; display: flex; justify-content:center; align-items:center; min-height:100vH; transition-duration: 0.1s; font-family:ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI Variable Display', 'Segoe UI', Helvetica, 'Apple Color Emoji', Arial, sans-serif, 'Segoe UI Emoji', 'Segoe UI Symbol'; padding: 5rem;`;
@@ -20,7 +20,7 @@ const App = () => {
             <ToolTip label="Theme" mode={currentMode}>
                 <Toggle
                     onChange={(checked) => {
-                        console.log(checked);
+                        console.log(toggleLabel);
                         toggleMode();
                     }}
                     mode={currentMode}
@@ -51,8 +51,9 @@ const App = () => {
             >
                 print("Hello, World!")
             </InlineCode>
+            <Spinner mode="gitHubMona" />
             <Card
-                icon="https://via.placeholder.com/500"
+                icon="https://www.vtpestcontrol.com/wp-content/uploads/2019/04/honey-bee.jpg"
                 title="Title"
                 price="10"
                 currency="£"
