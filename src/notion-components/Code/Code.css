@@ -106,4 +106,20 @@
   overflow-x: auto;
 }
 
+.inlinecode-container-light {
+  background-color: #EDEDEB;
+  color: #EB5757;
+  padding-inline: 0.5rem;
+  padding-block: 0.25rem;
+  border-radius: 0.5rem;
+}
+
+.inlinecode-container-dark {
+  background-color: #292927;
+  color: #EB5757;
+  padding-inline: 0.5rem;
+  padding-block: 0.25rem;
+  border-radius: 0.5rem;
+}
+
 /*# sourceMappingURL=Code.css.map */

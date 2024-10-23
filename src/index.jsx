@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom/client';
-import { Icon, Tag, IconButton, Toggle, Fallback, Table, Code, WrappedCode, Button, WideButton, ButtonGrouper, Hstack, Vstack, Image, Card, ToolTip, div } from './pack';
+import { InlineCode, Icon, Tag, IconButton, Toggle, Fallback, Table, Code, WrappedCode, Button, WideButton, ButtonGrouper, Hstack, Vstack, Image, Card, ToolTip, div } from './pack';
 
 const App = () => {
     const [currentMode, setCurrentMode] = useState("light");
@@ -46,6 +46,11 @@ const App = () => {
                     </WideButton>
                 </ToolTip>
             </Hstack>
+            <InlineCode
+                mode={currentMode}
+            >
+                print("Hello, World!")
+            </InlineCode>
             <Card
                 icon="https://via.placeholder.com/500"
                 title="Title"

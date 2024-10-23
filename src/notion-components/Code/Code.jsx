@@ -150,4 +150,12 @@ const WrappedCode = ({ children, language, mode }) => {
   );
 };
 
-export { Code, WrappedCode };
+const InlineCode = ({ children, mode="light" }) => {
+  return (
+    <div className={`inlinecode-container-${mode}`}>
+      <code>{children}</code>
+    </div>
+  )
+}
+
+export { Code, WrappedCode, InlineCode };
