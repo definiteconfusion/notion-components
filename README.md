@@ -1,6 +1,6 @@
 # Notion Components 📇
 
-![!image](./Github%20Social%20Banner.png)
+![!image](https://raw.githubusercontent.com/definiteconfusion/notion-components/refs/heads/main/Github%20Social%20Banner.png)
 
 ## Documentation
 
