@@ -39,8 +39,15 @@ module.exports = {
         use: ['style-loader', 'css-loader'], // Use style-loader and css-loader
       },
       {
-        test: /\.(png|gif|jpe?g)$/i, // Add this rule to handle image files
-        type: 'asset/resource', // Use asset/resource to emit the file as a separate asset
+        test: /\.(png|jpg|gif|svg)$/i,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: true,
+            },
+          },
+        ],
       },
       {
         test: /\.svg$/,

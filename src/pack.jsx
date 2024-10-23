@@ -36,7 +36,7 @@ export {
   Code,
   WrappedCode,
   ToolTip,
-  // Spinner, // To Fix a bug with image webpacking
+  Spinner,
   Table,
   Fallback,
   Toggle,
