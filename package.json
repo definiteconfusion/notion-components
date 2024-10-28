@@ -6,7 +6,7 @@
     "react",
     "components"
   ],
-  "version": "1.4.7",
+  "version": "1.4.8",
   "homepage": "https://jakerase.dev",
   "bugs": "https://github.com/definiteconfusion/notion-components",
   "license": "MIT",
