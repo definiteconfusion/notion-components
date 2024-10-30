@@ -276,4 +276,9 @@
   opacity: 1 !important;
 }
 
+.no-hover {
+  pointer-events: none;
+  cursor: default;
+}
+
 /*# sourceMappingURL=Styles.css.map */
