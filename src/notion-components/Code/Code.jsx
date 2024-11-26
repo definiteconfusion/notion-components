@@ -134,8 +134,12 @@ const Code = ({ children, language, mode }) => {
   const codeRef = useRef(null);
 
   useEffect(() => {
-    if (codeRef.current) {
-      codeRef.current.innerHTML = highlightSyntax(children, language, mode);
+    if (codeRef.current && children) {
+      // Ensure highlightSyntax returns a valid HTML string
+      const highlightedCode = highlightSyntax(children, language, mode);
+      if (highlightedCode) {
+        codeRef.current.innerHTML = highlightedCode;
+      }
     }
   }, [children, language, mode]);
 
