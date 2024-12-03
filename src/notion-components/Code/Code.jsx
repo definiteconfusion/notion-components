@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Code.css';
 const keyWords = {
   py: {
@@ -131,7 +131,7 @@ function highlightSyntax(codeContent, language, mode) {
 }
 
 const Code = ({ children, language, mode }) => {
-  const codeRef = useRef(null);
+  const codeRef = useState(null);
 
   useEffect(() => {
     if (codeRef.current && children) {
