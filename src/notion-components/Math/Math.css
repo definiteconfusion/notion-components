@@ -1,0 +1,18 @@
+.blockmath-main {
+  padding-block: 0.65rem;
+  padding-inline: 7rem;
+  border-radius: 0.5rem;
+  width: fit-content;
+}
+
+.inline-main-light {
+  width: fit-content;
+  color: black;
+}
+
+.inline-main-dark {
+  width: fit-content;
+  color: white;
+}
+
+/*# sourceMappingURL=Math.css.map */

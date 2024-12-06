@@ -14,6 +14,7 @@ import { Table } from './notion-components/Table/Table';
 import { Fallback } from './notion-components/Fallback/Fallback';
 import { Toggle } from './notion-components/Toggle/Toggle';
 import { Icon } from './notion-components/Icon/Icon';
+import { BlockEquation, InlineEquation } from './notion-components/Math/Math';
 
 // Export the components
 export {
@@ -42,5 +43,7 @@ export {
   Toggle,
   IconButton,
   Icon,
-  InlineCode
+  InlineCode,
+  BlockEquation,
+  InlineEquation
 };

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom/client';
-import { Spinner, InlineCode, Icon, Tag, IconButton, Toggle, Fallback, Table, Code, WrappedCode, Button, WideButton, ButtonGrouper, Hstack, Vstack, Image, Card, ToolTip, div } from './pack';
+import { InlineEquation, BlockEquation, Spinner, InlineCode, Icon, Tag, IconButton, Toggle, Fallback, Table, Code, WrappedCode, Button, WideButton, ButtonGrouper, Hstack, Vstack, Image, Card, ToolTip, div } from './pack';
 
 const App = () => {
     const [currentMode, setCurrentMode] = useState("light");
@@ -93,6 +93,14 @@ export default function App() {
                     { id: 2, name: 'Jane Smith', age: 34, occupation: 'Designer' },
                     { id: 3, name: 'Sam Brown', age: 23, occupation: 'Developer' },
                 ]}
+                mode={currentMode}
+            />
+            <BlockEquation
+                math="x \ne\ \frac{x}{2}"
+                mode={currentMode}
+            />
+            <InlineEquation
+                math="x \ne\ \frac{x}{2}"
                 mode={currentMode}
             />
         </Vstack>

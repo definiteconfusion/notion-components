@@ -14,7 +14,7 @@ module.exports = {
   },
   
 
-  mode: process.env.NODE_ENV || 'production', // Set mode based on environment
+  mode: process.env.NODE_ENV || 'development', // Set mode based on environment
 
   module: {
     rules: [
